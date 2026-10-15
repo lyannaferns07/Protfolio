@@ -1,0 +1,31 @@
+.section {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  /* Measured gap: card ends ~1790, statement starts ~1822, works start 2340. */
+  padding: 32px var(--gutter) 360px;
+}
+
+.mask {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.text {
+  font-size: var(--fs-body-lg);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  text-align: center;
+}
+
+@media (max-width: 809.98px) {
+  .section {
+    padding: 28px 20px 200px;
+  }
+}

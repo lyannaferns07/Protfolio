@@ -1,0 +1,161 @@
+.root {
+  background: var(--color-primary);
+  padding-block: var(--section-gap);
+}
+
+.inner {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ── Header ───────────────────────────────────── */
+.header {
+  margin-bottom: 64px;
+  max-width: 680px;
+}
+
+.eyebrow {
+  color: var(--color-accent) !important;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: var(--fs-display);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  color: var(--color-bg);
+  margin-bottom: 20px;
+}
+
+.subheading {
+  font-size: var(--fs-body-lg);
+  color: rgba(248, 247, 243, 0.55);
+  line-height: 1.55;
+}
+
+/* ── Grid ─────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 40px;
+}
+
+/* ── Card ─────────────────────────────────────── */
+.card {
+  background: var(--color-primary);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* Staggered reveal */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-mask) calc(var(--i, 0) * 0.1s + 0.1s),
+              transform 0.6s var(--ease-mask) calc(var(--i, 0) * 0.1s + 0.1s);
+}
+
+.visible .card {
+  opacity: 1;
+  transform: none;
+}
+
+.card:hover {
+  background: rgba(52, 75, 104, 0.4);
+}
+
+.cardTitle {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-bg);
+  margin-bottom: 12px;
+}
+
+.cardDesc {
+  font-size: var(--fs-small);
+  color: rgba(248, 247, 243, 0.6);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* ── Deliver list ─────────────────────────────── */
+.deliverList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+}
+
+.deliverItem {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: var(--fs-small);
+  color: rgba(248, 247, 243, 0.8);
+  line-height: 1.4;
+}
+
+.deliverCheck {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+}
+
+/* ── Learning ─────────────────────────────────── */
+.learning {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.learningLabel {
+  font-family: var(--font-ui);
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 247, 243, 0.35);
+  margin-bottom: 10px;
+}
+
+.learningItem {
+  display: flex;
+  gap: 10px;
+  font-size: var(--fs-small);
+  color: rgba(248, 247, 243, 0.4);
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+.learningItem span {
+  color: var(--color-accent);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* ── Note ─────────────────────────────────────── */
+.note {
+  font-family: var(--font-ui);
+  font-size: var(--fs-label);
+  color: rgba(248, 247, 243, 0.3);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 28px;
+  }
+}

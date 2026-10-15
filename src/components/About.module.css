@@ -1,0 +1,285 @@
+/* ============================================================
+   ABOUT — Philosophy column + credentials table + capability index
+   ============================================================ */
+
+.root {
+  background: var(--background);
+  border-bottom: 1px solid var(--border-light);
+  padding: var(--space-xl) 0;
+}
+
+.inner {
+  max-width: var(--max-w-7xl);
+  margin-inline: auto;
+  padding-inline: var(--margin);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+/* ── Left column ────────────────────────────────────────── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-headline-lg-mobile);
+  line-height: var(--lh-headline-lg-mobile);
+  letter-spacing: var(--ls-headline-lg-mobile);
+  font-weight: 400;
+  color: var(--primary);
+  max-width: 20ch;
+}
+
+.pullquote {
+  margin: var(--space-lg) 0;
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+  border-left: 2px solid var(--secondary);
+}
+
+.pullquote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-headline-md-mobile);
+  line-height: 1.35;
+  color: var(--primary);
+}
+
+.body {
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body-md);
+  color: var(--on-surface-variant);
+}
+
+.badgeCard {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--card-light);
+}
+
+.badgeCardIcon {
+  color: var(--secondary);
+}
+
+.badgeCardTitle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-md);
+  line-height: var(--lh-label-md);
+  letter-spacing: var(--ls-label-md);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.badgeCardSub {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--on-surface-variant);
+}
+
+/* ── Right column ───────────────────────────────────────── */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.narrative {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--card-light);
+}
+
+.narrativeTitle {
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-display);
+  font-size: var(--fs-headline-sm);
+  line-height: var(--lh-headline-sm);
+  letter-spacing: var(--ls-headline-sm);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ── Credentials table ──────────────────────────────────── */
+.table {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--card-light);
+}
+
+.tableHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--surface);
+}
+
+.tableHeadLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.tableHeadMeta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  color: var(--outline);
+}
+
+.tableBody {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableKey {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  text-transform: uppercase;
+  color: var(--outline);
+}
+
+.tableValue {
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.tableValueAccent {
+  font-weight: 500;
+}
+
+.availabilityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  flex: none;
+}
+
+/* ── Capability index ───────────────────────────────────── */
+.indexLabel {
+  margin-bottom: var(--space-md);
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.indexGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.indexCard {
+  padding: var(--space-md);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--card-light);
+}
+
+.indexTitle {
+  margin-bottom: var(--space-sm);
+  color: var(--outline);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.indexList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.indexItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--primary);
+}
+
+.bullet {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--secondary);
+  flex: none;
+}
+
+/* ── Breakpoints ────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .root { padding: var(--margin-lg) 0; }
+  .inner { padding-inline: var(--margin-lg); }
+  .narrative { padding: 40px; }
+  .tableRow {
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+  .indexGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pullquote p { font-size: var(--fs-headline-md); }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+  }
+  .heading {
+    font-size: var(--fs-headline-lg);
+    line-height: var(--lh-headline-lg);
+    letter-spacing: var(--ls-headline-lg);
+  }
+}

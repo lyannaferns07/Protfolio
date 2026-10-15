@@ -1,0 +1,35 @@
+.list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 24px hit area around an 18px glyph, as on the reference. */
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: transform 0.35s var(--ease-soft);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.list[data-tone='dark'] .icon {
+  color: var(--ink);
+}
+
+.list[data-tone='light'] .icon {
+  color: var(--white);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    transform: translateY(-3px);
+  }
+}

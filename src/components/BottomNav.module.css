@@ -1,0 +1,70 @@
+.root {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  z-index: 6;
+  transform: translateX(-50%);
+}
+
+.list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 51px;
+  /* Reference measures a 268px pill for these three labels. */
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+}
+
+.item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--fs-nav);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--grey-nav);
+  white-space: nowrap;
+  transition: color 0.3s var(--ease-soft);
+}
+
+.link[data-active='true'] {
+  color: var(--ink);
+}
+
+/* Lime pill that slides behind the active item. */
+.indicator {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  height: 30px;
+  margin-top: -15px;
+  border-radius: var(--radius-pill);
+  background: var(--lime);
+  transition: transform 0.45s var(--ease-soft), width 0.45s var(--ease-soft);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: var(--ink);
+  }
+}
+
+@media (max-width: 809.98px) {
+  .root {
+    bottom: 40px;
+  }
+}

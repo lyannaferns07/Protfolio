@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="cerco-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1824" />
+      <stop offset="50%" stop-color="#13273a" />
+      <stop offset="100%" stop-color="#081018" />
+    </linearGradient>
+    <linearGradient id="cerco-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.08)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)" />
+    </linearGradient>
+    <linearGradient id="cerco-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <pattern id="dot-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="rgba(56, 189, 248, 0.1)" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#cerco-bg)" />
+  <rect width="1200" height="675" fill="url(#dot-grid)" />
+
+  <!-- UI Window / App Showcase Frame -->
+  <g transform="translate(100, 75)">
+    <!-- Main UI Container -->
+    <rect width="1000" height="525" rx="16" fill="rgba(15, 28, 43, 0.9)" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1.5" />
+    
+    <!-- App Top Bar -->
+    <rect width="1000" height="64" rx="16" fill="rgba(255, 255, 255, 0.04)" />
+    <circle cx="36" cy="32" r="6" fill="#ef4444" opacity="0.8" />
+    <circle cx="56" cy="32" r="6" fill="#eab308" opacity="0.8" />
+    <circle cx="76" cy="32" r="6" fill="#22c55e" opacity="0.8" />
+    
+    <!-- Search Bar in Header -->
+    <rect x="140" y="16" width="480" height="32" rx="16" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.1)" />
+    <circle cx="160" cy="32" r="5" fill="none" stroke="#94a3b8" stroke-width="1.5" />
+    <line x1="164" y1="36" x2="170" y2="42" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="180" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94a3b8">Search verified carpenters, plumbers, developers near you...</text>
+    
+    <!-- Filter Pills -->
+    <g transform="translate(40, 90)">
+      <rect x="0" y="0" width="90" height="30" rx="15" fill="#38bdf8" />
+      <text x="45" y="19" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#0c1824" text-anchor="middle">All Services</text>
+
+      <rect x="102" y="0" width="96" height="30" rx="15" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" />
+      <text x="150" y="19" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Home Repair</text>
+
+      <rect x="210" y="0" width="86" height="30" rx="15" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" />
+      <text x="253" y="19" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Designers</text>
+    </g>
+
+    <!-- Service Listing Cards Grid -->
+    <g transform="translate(40, 145)">
+      <!-- Card 1 -->
+      <rect x="0" y="0" width="290" height="260" rx="12" fill="url(#cerco-card)" stroke="rgba(255, 255, 255, 0.08)" />
+      <rect x="16" y="16" width="258" height="120" rx="8" fill="rgba(56, 189, 248, 0.12)" />
+      <circle cx="145" cy="76" r="28" fill="rgba(56, 189, 248, 0.25)" />
+      <text x="145" y="82" font-family="-apple-system, sans-serif" font-size="20" font-weight="bold" fill="#38bdf8" text-anchor="middle">&#9889;</text>
+      <text x="16" y="165" font-family="-apple-system, sans-serif" font-size="16" font-weight="600" fill="#f8fafc">Elite Electricals</text>
+      <text x="16" y="188" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">&#9733; 4.9 (128 reviews) &#8226; Verified</text>
+      <rect x="16" y="210" width="70" height="24" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="51" y="226" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#38bdf8" text-anchor="middle">Available</text>
+
+      <!-- Card 2 -->
+      <rect x="315" y="0" width="290" height="260" rx="12" fill="url(#cerco-card)" stroke="rgba(255, 255, 255, 0.08)" />
+      <rect x="331" y="16" width="258" height="120" rx="8" fill="rgba(168, 85, 247, 0.12)" />
+      <circle cx="460" cy="76" r="28" fill="rgba(168, 85, 247, 0.25)" />
+      <text x="460" y="82" font-family="-apple-system, sans-serif" font-size="20" font-weight="bold" fill="#c084fc" text-anchor="middle">&#128736;</text>
+      <text x="331" y="165" font-family="-apple-system, sans-serif" font-size="16" font-weight="600" fill="#f8fafc">Vertex Plumbing Co.</text>
+      <text x="331" y="188" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">&#9733; 4.8 (94 reviews) &#8226; Licensed</text>
+      <rect x="331" y="210" width="70" height="24" rx="4" fill="rgba(168, 85, 247, 0.15)" />
+      <text x="366" y="226" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#c084fc" text-anchor="middle">Book Now</text>
+
+      <!-- Card 3 -->
+      <rect x="630" y="0" width="290" height="260" rx="12" fill="url(#cerco-card)" stroke="rgba(255, 255, 255, 0.08)" />
+      <rect x="646" y="16" width="258" height="120" rx="8" fill="rgba(34, 197, 94, 0.12)" />
+      <circle cx="775" cy="76" r="28" fill="rgba(34, 197, 94, 0.25)" />
+      <text x="775" y="82" font-family="-apple-system, sans-serif" font-size="20" font-weight="bold" fill="#4ade80" text-anchor="middle">&#128208;</text>
+      <text x="646" y="165" font-family="-apple-system, sans-serif" font-size="16" font-weight="600" fill="#f8fafc">Studio Nova Design</text>
+      <text x="646" y="188" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">&#9733; 5.0 (52 reviews) &#8226; Top Rated</text>
+      <rect x="646" y="210" width="70" height="24" rx="4" fill="rgba(34, 197, 94, 0.15)" />
+      <text x="681" y="226" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#4ade80" text-anchor="middle">Available</text>
+    </g>
+  </g>
+</svg>

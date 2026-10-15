@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142238" />
+      <stop offset="50%" stop-color="#1C2E4A" />
+      <stop offset="100%" stop-color="#0E1726" />
+    </linearGradient>
+    <linearGradient id="eg-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#AA8010" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#eg-bg)" />
+  <rect width="1200" height="675" fill="url(#grid)" />
+
+  <!-- Geometric accent lines -->
+  <circle cx="950" cy="337" r="280" fill="none" stroke="rgba(212,175,55,0.12)" stroke-width="1.5" />
+  <circle cx="950" cy="337" r="190" fill="none" stroke="rgba(212,175,55,0.08)" stroke-width="1" />
+  <line x1="120" y1="180" x2="480" y2="180" stroke="url(#eg-gold)" stroke-width="2" />
+
+  <!-- Typography representation -->
+  <text x="120" y="240" font-family="'DM Sans', -apple-system, sans-serif" font-size="16" font-weight="600" letter-spacing="4" fill="#D4AF37" text-transform="uppercase">CLIENT CASE STUDY</text>
+  
+  <text x="120" y="320" font-family="'Playfair Display', Georgia, serif" font-size="64" font-weight="600" fill="#F8F7F3">Elephant Grey</text>
+  <text x="120" y="375" font-family="'Playfair Display', Georgia, serif" font-size="32" font-style="italic" fill="#E8E4D8">Collaborative LLP</text>
+  
+  <text x="120" y="440" font-family="'DM Sans', -apple-system, sans-serif" font-size="20" fill="#9A9080">Creative Studio &amp; Narrative Production House</text>
+
+  <!-- Mock browser window badge -->
+  <rect x="120" y="480" width="340" height="46" rx="23" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+  <circle cx="146" cy="503" r="5" fill="#4ADE80" />
+  <text x="164" y="509" font-family="'DM Sans', sans-serif" font-size="15" font-weight="500" fill="#F8F7F3">Live at elephant-grey.com ↗</text>
+</svg>

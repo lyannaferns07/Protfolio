@@ -1,0 +1,260 @@
+.root {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--dur-base) var(--ease-out);
+  /* Reveal animation */
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s var(--ease-mask) var(--delay, 0s),
+              transform 0.7s var(--ease-mask) var(--delay, 0s),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+
+.root.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.root:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+.root.academic {
+  background: var(--color-bg);
+}
+
+/* ── Image ────────────────────────────────────── */
+.imageWrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-primary);
+}
+
+/* featured (full-width) card gets taller image */
+.root:first-child .imageWrap {
+  aspect-ratio: 21 / 9;
+}
+
+.root.academic .imageWrap {
+  aspect-ratio: 3 / 1;
+}
+
+.imageInner {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.root:hover .image {
+  transform: scale(1.04);
+}
+
+/* Placeholder when no image */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.placeholderText {
+  font-size: var(--fs-h2);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: rgba(248, 247, 243, 0.15);
+}
+
+/* Hover overlay */
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(20, 34, 56, 0.7) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.root:hover .imageOverlay {
+  opacity: 1;
+}
+
+.viewLabel {
+  font-family: var(--font-ui);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-bg);
+  letter-spacing: 0.02em;
+  transform: translateY(8px);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.root:hover .viewLabel {
+  transform: translateY(0);
+}
+
+/* ── Meta ─────────────────────────────────────── */
+.meta {
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.metaLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.metaRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Badges ───────────────────────────────────── */
+.badges {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+}
+
+.badge_client {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(20, 34, 56, 0.05);
+}
+
+.badge_live .statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  flex-shrink: 0;
+}
+
+.badge_in_progress .statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.badge_concept .statusDot,
+.badge_academic .statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Title & tagline ──────────────────────────── */
+.title {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+/* ── Tech tags ────────────────────────────────── */
+.tech {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.techTag {
+  padding: 3px 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Expand button ────────────────────────────── */
+.expandBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.expandBtn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+  transform: rotate(45deg);
+}
+
+.expandIcon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── Live link ────────────────────────────────── */
+.liveLink {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-success);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast);
+}
+
+.liveLink:hover {
+  border-color: var(--color-success);
+}

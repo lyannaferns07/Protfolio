@@ -1,0 +1,242 @@
+/* ============================================================
+   HEADER — Ivory sticky bar with blur, mono nav and navy CTA
+   ============================================================ */
+
+.root {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--background) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--dur-base) ease,
+    box-shadow var(--dur-base) ease;
+}
+
+.scrolled {
+  border-bottom-color: var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 11, 32, 0.04);
+}
+
+.inner {
+  max-width: var(--max-w-7xl);
+  margin-inline: auto;
+  padding-inline: var(--margin-lg) var(--margin-lg);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* ── Brand ──────────────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--fs-headline-md);
+  line-height: var(--lh-headline-md);
+  letter-spacing: var(--ls-headline-md);
+  font-weight: 400;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.availability {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--secondary-container) 40%, transparent);
+  border: 1px solid var(--secondary-container);
+  color: var(--on-secondary-container);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  white-space: nowrap;
+}
+
+.availabilityDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* ── Desktop nav ────────────────────────────────────────── */
+.nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navLink {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  padding-bottom: 3px;
+  transition: color var(--dur-fast) ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+/* Active link gets the mono underline, matching the Stitch design */
+.navLinkActive {
+  color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+}
+
+/* ── Actions ────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  background: var(--primary-container);
+  color: var(--surface-bright);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  white-space: nowrap;
+  transition: background-color var(--dur-fast) ease;
+}
+
+.cta:hover {
+  background: var(--brass-accent-hover);
+}
+
+.burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--primary);
+  transition: border-color var(--dur-fast) ease;
+}
+
+.burger:hover {
+  border-color: var(--primary);
+}
+
+/* ── Mobile sheet ───────────────────────────────────────── */
+.sheet {
+  position: fixed;
+  inset: var(--header-h) 0 auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--margin) var(--margin-lg);
+  background: var(--surface-container-lowest);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lift);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out),
+    visibility var(--dur-base);
+}
+
+.sheetOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.sheetLink {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border-light);
+  font-family: var(--font-display);
+  font-size: var(--fs-headline-md-mobile);
+  line-height: var(--lh-headline-md-mobile);
+  color: var(--primary);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--dur-base) ease,
+    transform var(--dur-base) ease;
+}
+
+.sheetOpen .sheetLink {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sheetIndex {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  color: var(--secondary);
+}
+
+.sheetLinkActive {
+  color: var(--secondary);
+}
+
+.sheetCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background: var(--primary-container);
+  color: var(--surface-bright);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  letter-spacing: var(--ls-label-sm);
+}
+
+/* ── Breakpoints ────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .nav { display: flex; }
+  .burger { display: none; }
+  .availability { display: inline-flex; }
+  .sheet { display: none; }
+}
+
+@media (max-width: 1023px) {
+  .inner { padding-inline: var(--margin); }
+  .cta { display: none; }
+}
+
+@media (max-width: 480px) {
+  .logo { font-size: var(--fs-headline-md-mobile); }
+}

@@ -1,0 +1,184 @@
+/* ============================================================
+   LYANN FERNANDES — DESIGN TOKENS
+   Verbatim from the Stitch design system ("Editorial Brutalist"):
+   Newsreader (editorial serif) / Manrope (grotesque sans) /
+   JetBrains Mono (technical monospace).
+   Reference only these tokens in components — never hard-code
+   a raw colour.
+   ============================================================ */
+
+:root {
+  /* ── Colour System ─────────────────────────────────────── */
+  /* Light (ivory) palette — the default surface for the site */
+  --background:              #faf9f5;
+  --surface:                 #faf9f5;
+  --surface-bright:          #faf9f5;
+  --surface-dim:             #dbdad6;
+  --surface-container-lowest:#ffffff;
+  --surface-container-low:   #f4f4f0;
+  --surface-container:       #efeeea;
+  --surface-container-high:  #e9e8e4;
+  --surface-container-highest:#e3e2df;
+  --surface-variant:         #e3e2df;
+  --surface-tint:            #515f78;
+  --card-light:              #ffffff;
+
+  /* Dark (navy) palette — used for header buttons, footer, accents */
+  --primary:                 #000b20;
+  --primary-container:       #142238;
+  --on-primary:              #ffffff;
+  --on-primary-container:    #7c8aa4;
+  --primary-fixed:           #d6e3ff;
+  --primary-fixed-dim:       #b9c7e4;
+  --on-primary-fixed:        #0d1c31;
+  --on-primary-fixed-variant:#3a475f;
+
+  /* Brass / champagne — the warm accent family */
+  --secondary:               #6a5d46;
+  --secondary-container:     #f0ddc0;
+  --on-secondary-container:  #6e6149;
+  --secondary-fixed:         #f2e0c3;
+  --secondary-fixed-dim:     #d6c4a8;
+  --on-secondary-fixed:      #231a08;
+  --on-secondary-fixed-variant:#514530;
+  --on-secondary:            #ffffff;
+  --brass-accent-hover:      #A08E70;
+
+  /* Tertiary / cool slate */
+  --tertiary:                #010c1a;
+  --tertiary-container:      #162331;
+  --tertiary-fixed:          #d6e4f7;
+  --tertiary-fixed-dim:      #bac8da;
+  --on-tertiary:             #ffffff;
+  --on-tertiary-container:   #7d8a9c;
+  --on-tertiary-fixed:       #0f1c2a;
+  --on-tertiary-fixed-variant:#3b4857;
+
+  --bg-dark:                 #101A29;
+  --card-dark:               #1B293B;
+  --border-dark:             #344B68;
+
+  --on-surface:              #1b1c1a;
+  --on-surface-variant:      #44474d;
+  --outline:                 #75777e;
+  --outline-variant:         #c5c6cd;
+  --border-light:            #DCDDD9;
+
+  --inverse-surface:         #2f312e;
+  --inverse-on-surface:      #f2f1ed;
+  --inverse-primary:         #b9c7e4;
+
+  --error:                   #ba1a1a;
+  --error-container:         #ffdad6;
+  --on-error:                #ffffff;
+  --on-error-container:      #93000a;
+
+  --code-cyan:               #00AEEF;
+  --accent-yellow:           #F4B223;
+
+  /* ── Semantic aliases (used by components) ──────────────── */
+  --color-bg:                var(--background);
+  --color-card:              var(--card-light);
+  --color-text:              var(--on-surface);
+  --color-primary:           var(--primary-container);
+  --color-accent:            var(--secondary);
+  --color-border:            var(--border-light);
+  --color-muted:             var(--outline);
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body:    'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  /* Legacy aliases retained so untouched modules keep working */
+  --font-ui:      var(--font-body);
+  --font-serif:   var(--font-display);
+
+  /* ── Type Scale (verbatim from Stitch) ─────────────────── */
+  --fs-display-hero:          80px;
+  --lh-display-hero:          88px;
+  --ls-display-hero:          -0.03em;
+
+  --fs-display-hero-mobile:   44px;
+  --lh-display-hero-mobile:   48px;
+  --ls-display-hero-mobile:   -0.02em;
+
+  --fs-headline-lg:           48px;
+  --lh-headline-lg:           56px;
+  --ls-headline-lg:           -0.02em;
+
+  --fs-headline-lg-mobile:    32px;
+  --lh-headline-lg-mobile:    38px;
+  --ls-headline-lg-mobile:    -0.01em;
+
+  --fs-headline-md:           32px;
+  --lh-headline-md:           40px;
+  --ls-headline-md:           -0.01em;
+
+  --fs-headline-md-mobile:    24px;
+  --lh-headline-md-mobile:    30px;
+
+  --fs-headline-sm:           20px;
+  --lh-headline-sm:           28px;
+  --ls-headline-sm:           -0.01em;
+
+  --fs-body-lg:               18px;
+  --lh-body-lg:               28px;
+
+  --fs-body-md:               15px;
+  --lh-body-md:               24px;
+
+  --fs-body-sm:               13px;
+  --lh-body-sm:               20px;
+
+  --fs-label-md:              12px;
+  --lh-label-md:              16px;
+  --ls-label-md:              0.08em;
+
+  --fs-label-sm:              11px;
+  --lh-label-sm:              14px;
+  --ls-label-sm:              0.1em;
+
+  /* ── Spacing (verbatim from Stitch) ─────────────────────── */
+  --space-xs:   0.375rem;   /*  6px */
+  --space-sm:   0.75rem;    /* 12px */
+  --space-md:   1.25rem;    /* 20px */
+  --space-lg:   2.25rem;    /* 36px */
+  --space-xl:   4rem;       /* 64px */
+  --margin:     1.5rem;     /* 24px */
+  --margin-md:  3rem;       /* 48px */
+  --margin-lg:  5rem;       /* 80px */
+  --gutter:     1.5rem;     /* 24px */
+  --gutter-lg:  2.5rem;     /* 40px */
+
+  /* ── Radius (verbatim from Stitch — deliberately tight) ── */
+  --radius-sm:   0.125rem;  /*  2px */
+  --radius-md:   0.25rem;   /*  4px */
+  --radius-lg:   0.5rem;    /*  8px */
+  --radius-xl:   0.75rem;   /* 12px */
+  --radius-full: 9999px;
+
+  /* ── Layout ────────────────────────────────────────────── */
+  --header-h:   80px;        /* h-20 in the Stitch header */
+  --max-w-7xl:  80rem;       /* max-w-7xl = 1280px */
+  --section-pad: var(--space-xl);
+
+  /* ── Motion ────────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.22, 1.00, 0.36, 1.00);
+  --ease-in-out: cubic-bezier(0.44, 0.00, 0.56, 1.00);
+  --ease-mask:   cubic-bezier(0.53, 0.00, 0.44, 1.00);
+  --dur-fast:  0.2s;
+  --dur-base:  0.3s;
+  --dur-slow:  0.7s;
+
+  /* ── Shadow ────────────────────────────────────────────── */
+  --shadow-sm:  0 1px 2px rgba(0, 11, 32, 0.05);
+  --shadow-card: 0 1px 3px rgba(0, 11, 32, 0.06), 0 4px 16px rgba(0, 11, 32, 0.04);
+  --shadow-lift: 0 8px 32px rgba(0, 11, 32, 0.10);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --gutter:    1.5rem;
+    --gutter-lg: 1.5rem;
+  }
+}

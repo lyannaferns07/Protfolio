@@ -1,0 +1,170 @@
+/* ============================================================
+   HERO — Ivory canvas, 40px hairline grid, serif display type
+   ============================================================ */
+
+.root {
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--background);
+  overflow: hidden;
+}
+
+/* Fine architectural grid, exactly as in the Stitch design */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(220, 221, 217, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 221, 217, 0.45) 1px, transparent 1px);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  max-width: var(--max-w-7xl);
+  margin-inline: auto;
+  padding: var(--space-xl) var(--margin) 64px;
+}
+
+/* ── Eyebrow row ────────────────────────────────────────── */
+.eyebrowRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--margin-md);
+}
+
+.eyebrowPill {
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--secondary-container) 50%, transparent);
+  border: 1px solid var(--secondary-container);
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.buildStamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--outline);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+}
+
+/* ── Headline ───────────────────────────────────────────── */
+.headline {
+  max-width: 20ch;
+  margin: var(--space-lg) 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-display-hero-mobile);
+  line-height: var(--lh-display-hero-mobile);
+  letter-spacing: var(--ls-display-hero-mobile);
+  font-weight: 400;
+  color: var(--primary);
+}
+
+/* ── Tagline ────────────────────────────────────────────── */
+.tagline {
+  max-width: 46ch;
+  margin-bottom: 40px;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body-lg);
+  color: var(--on-surface-variant);
+}
+
+/* ── CTAs ───────────────────────────────────────────────── */
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--margin-lg);
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body-md);
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+
+.ctaPrimary {
+  background: var(--primary-container);
+  color: var(--surface-container-lowest);
+}
+
+.ctaPrimary:hover {
+  background: var(--brass-accent-hover);
+}
+
+.ctaSecondary {
+  border: 1px solid var(--border-light);
+  background: var(--card-light);
+  color: var(--primary);
+}
+
+.ctaSecondary:hover {
+  border-color: var(--primary);
+}
+
+/* ── Metadata stats ─────────────────────────────────────── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.stat {
+  padding-left: var(--space-sm);
+  border-left: 1px solid var(--border-light);
+}
+
+.statLabel {
+  margin-bottom: 2px;
+  color: var(--outline);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statValue {
+  color: var(--primary);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body-md);
+  font-weight: 500;
+}
+
+/* ── Breakpoints ────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .inner { padding: var(--margin-lg) var(--margin-lg) 112px; }
+  .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .headline {
+    font-size: var(--fs-display-hero);
+    line-height: var(--lh-display-hero);
+    letter-spacing: var(--ls-display-hero);
+  }
+}

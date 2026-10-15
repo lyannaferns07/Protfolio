@@ -1,0 +1,1769 @@
+﻿{
+  "desktop": {
+    "overflow0": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offenders": [
+        {
+          "tag": "nav",
+          "cls": "",
+          "left": 1498,
+          "right": 2822,
+          "pos": "static"
+        },
+        {
+          "tag": "ul",
+          "cls": "_mobileNavList_1kho3_181",
+          "left": 1498,
+          "right": 2822,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 _active_1kho3_84",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 1518,
+          "right": 2842,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_mobileSocials_1kho3_215",
+          "left": 1498,
+          "right": 2822,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "github",
+          "left": 1498,
+          "right": 1543,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "linkedin",
+          "left": 1567,
+          "right": 1623,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "instagram",
+          "left": 1647,
+          "right": 1713,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "_card_131ir_141",
+          "left": 1236,
+          "right": 2096,
+          "pos": "absolute"
+        },
+        {
+          "tag": "div",
+          "cls": "_mediaWrap_131ir_200",
+          "left": 1237,
+          "right": 1597,
+          "pos": "relative"
+        },
+        {
+          "tag": "img",
+          "cls": "_media_131ir_200",
+          "left": 1237,
+          "right": 1596,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_mediaOverlay_131ir_225",
+          "left": 1237,
+          "right": 1596,
+          "pos": "absolute"
+        },
+        {
+          "tag": "span",
+          "cls": "_mediaPrompt_131ir_247",
+          "left": 1399,
+          "right": 1580,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_cardBody_131ir_262",
+          "left": 1597,
+          "right": 2095,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_cardTopRow_131ir_274",
+          "left": 1625,
+          "right": 2067,
+          "pos": "static"
+        },
+        {
+          "tag": "span",
+          "cls": "_badge_131ir_281 _badge_in_progress_131ir_309",
+          "left": 1625,
+          "right": 1868,
+          "pos": "static"
+        },
+        {
+          "tag": "span",
+          "cls": "_statusDot_131ir_297",
+          "left": 1636,
+          "right": 1642,
+          "pos": "static"
+        }
+      ],
+      "offenderCount": 79
+    },
+    "overflowMid": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyScrollWidth": 1440
+    },
+    "images": [
+      {
+        "src": "/assets/portrait.png",
+        "ok": true,
+        "nw": 843
+      },
+      {
+        "src": "/images/projects/elephant-grey.jpg",
+        "ok": true,
+        "nw": 2160
+      },
+      {
+        "src": "/images/projects/cerco.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/images/projects/assist-ai.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/images/projects/smart-irrigation.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/assets/portrait.png",
+        "ok": false,
+        "nw": 843
+      },
+      {
+        "src": "/assets/portrait.png",
+        "ok": false,
+        "nw": 843
+      }
+    ],
+    "geo": {
+      "top": 1038.640625,
+      "height": 4500,
+      "scrollHeight": 9384,
+      "vh": 900
+    },
+    "samples": [
+      {
+        "f": 0,
+        "scrollY": 1039,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": 290,
+            "right": 1150,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "op": "1"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.15,
+        "scrollY": 1579,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": -590,
+            "right": 270,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -879.974, 0)",
+            "op": "0.0698"
+          },
+          {
+            "left": 307,
+            "right": 1167,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, 16.506, 0)",
+            "op": "0.9826"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.3,
+        "scrollY": 2119,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 180,
+            "right": 1040,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -109.899, 0)",
+            "op": "0.8838"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.45,
+        "scrollY": 2659,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 706,
+            "right": 1566,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 415.985, 0)",
+            "op": "0.5603"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.6,
+        "scrollY": 3199,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 290,
+            "right": 1150,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 0.00086, 0)",
+            "op": "1"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.75,
+        "scrollY": 3739,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -93,
+            "right": 767,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, -382.697, 0)",
+            "op": "0.5955"
+          },
+          {
+            "left": 1236,
+            "right": 2096,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 946, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.9,
+        "scrollY": 4279,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 416,
+            "right": 1276,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 125.858, 0)",
+            "op": "0.867"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 1,
+        "scrollY": 4639,
+        "deScrollWidth": 1440,
+        "deClientWidth": 1440,
+        "cards": [
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": -656,
+            "right": 204,
+            "w": 860,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, -946, 0)",
+            "op": "0"
+          },
+          {
+            "left": 290,
+            "right": 1150,
+            "w": 860,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 0.00086, 0)",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      }
+    ],
+    "errors": [],
+    "failed": []
+  },
+  "tablet": {
+    "overflow0": {
+      "scrollWidth": 900,
+      "clientWidth": 900,
+      "bodyScrollWidth": 900,
+      "offenders": [
+        {
+          "tag": "nav",
+          "cls": "",
+          "left": 936,
+          "right": 1764,
+          "pos": "static"
+        },
+        {
+          "tag": "ul",
+          "cls": "_mobileNavList_1kho3_181",
+          "left": 936,
+          "right": 1764,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 _active_1kho3_84",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 956,
+          "right": 1784,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_mobileSocials_1kho3_215",
+          "left": 936,
+          "right": 1764,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "github",
+          "left": 936,
+          "right": 981,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "linkedin",
+          "left": 1005,
+          "right": 1061,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "instagram",
+          "left": 1085,
+          "right": 1151,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "_card_131ir_141",
+          "left": 882,
+          "right": 1602,
+          "pos": "absolute"
+        },
+        {
+          "tag": "div",
+          "cls": "_mediaWrap_131ir_200",
+          "left": 883,
+          "right": 1185,
+          "pos": "relative"
+        },
+        {
+          "tag": "img",
+          "cls": "_media_131ir_200",
+          "left": 883,
+          "right": 1184,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_mediaOverlay_131ir_225",
+          "left": 883,
+          "right": 1184,
+          "pos": "absolute"
+        },
+        {
+          "tag": "span",
+          "cls": "_mediaPrompt_131ir_247",
+          "left": 986,
+          "right": 1168,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_cardBody_131ir_262",
+          "left": 1185,
+          "right": 1601,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_cardTopRow_131ir_274",
+          "left": 1213,
+          "right": 1573,
+          "pos": "static"
+        },
+        {
+          "tag": "span",
+          "cls": "_badge_131ir_281 _badge_in_progress_131ir_309",
+          "left": 1213,
+          "right": 1455,
+          "pos": "static"
+        },
+        {
+          "tag": "span",
+          "cls": "_statusDot_131ir_297",
+          "left": 1224,
+          "right": 1230,
+          "pos": "static"
+        }
+      ],
+      "offenderCount": 79
+    },
+    "overflowMid": {
+      "scrollWidth": 900,
+      "clientWidth": 900,
+      "bodyScrollWidth": 900
+    },
+    "images": [
+      {
+        "src": "/assets/portrait.png",
+        "ok": true,
+        "nw": 843
+      },
+      {
+        "src": "/images/projects/elephant-grey.jpg",
+        "ok": true,
+        "nw": 2160
+      },
+      {
+        "src": "/images/projects/cerco.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/images/projects/assist-ai.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/images/projects/smart-irrigation.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/assets/portrait.png",
+        "ok": false,
+        "nw": 843
+      },
+      {
+        "src": "/assets/portrait.png",
+        "ok": false,
+        "nw": 843
+      }
+    ],
+    "geo": {
+      "top": 1000,
+      "height": 5000,
+      "scrollHeight": 9556,
+      "vh": 1000
+    },
+    "samples": [
+      {
+        "f": 0,
+        "scrollY": 1000,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": 90,
+            "right": 810,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "op": "1"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.15,
+        "scrollY": 1600,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": -645,
+            "right": 75,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -735.21, 0)",
+            "op": "0.0717"
+          },
+          {
+            "left": 104,
+            "right": 824,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, 14.1977, 0)",
+            "op": "0.9821"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.3,
+        "scrollY": 2200,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -2,
+            "right": 718,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -92.0556, 0)",
+            "op": "0.8838"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.45,
+        "scrollY": 2800,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 438,
+            "right": 1158,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 348.383, 0)",
+            "op": "0.5601"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.6,
+        "scrollY": 3400,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 90,
+            "right": 810,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, 0.00072, 0)",
+            "op": "1"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.75,
+        "scrollY": 4000,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -228,
+            "right": 492,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, -318.368, 0)",
+            "op": "0.598"
+          },
+          {
+            "left": 882,
+            "right": 1602,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 792, 0)",
+            "op": "0"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 0.9,
+        "scrollY": 4600,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 195,
+            "right": 915,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 105.437, 0)",
+            "op": "0.8669"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      },
+      {
+        "f": 1,
+        "scrollY": 5000,
+        "deScrollWidth": 900,
+        "deClientWidth": 900,
+        "cards": [
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "1",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "2",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": -702,
+            "right": 18,
+            "w": 720,
+            "z": "3",
+            "transform": "matrix(1, 0, 0, 1, -792, 0)",
+            "op": "0"
+          },
+          {
+            "left": 90,
+            "right": 810,
+            "w": 720,
+            "z": "4",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "sticky"
+        }
+      }
+    ],
+    "errors": [],
+    "failed": []
+  },
+  "mobile": {
+    "overflow0": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "offenders": [
+        {
+          "tag": "nav",
+          "cls": "",
+          "left": 410,
+          "right": 760,
+          "pos": "static"
+        },
+        {
+          "tag": "ul",
+          "cls": "_mobileNavList_1kho3_181",
+          "left": 410,
+          "right": 760,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 _active_1kho3_84",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "li",
+          "cls": "",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "_mobileNavLink_1kho3_199 ",
+          "left": 430,
+          "right": 780,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_mobileSocials_1kho3_215",
+          "left": 410,
+          "right": 760,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "github",
+          "left": 410,
+          "right": 455,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "linkedin",
+          "left": 479,
+          "right": 535,
+          "pos": "static"
+        },
+        {
+          "tag": "a",
+          "cls": "instagram",
+          "left": 559,
+          "right": 625,
+          "pos": "static"
+        },
+        {
+          "tag": "ul",
+          "cls": "_cardStack_131ir_152",
+          "left": -405,
+          "right": 795,
+          "pos": "relative"
+        },
+        {
+          "tag": "li",
+          "cls": "_card_131ir_141",
+          "left": -385,
+          "right": -53,
+          "pos": "relative"
+        },
+        {
+          "tag": "div",
+          "cls": "_mediaWrap_131ir_200",
+          "left": -384,
+          "right": -54,
+          "pos": "relative"
+        },
+        {
+          "tag": "img",
+          "cls": "_media_131ir_200",
+          "left": -384,
+          "right": -54,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_mediaOverlay_131ir_225",
+          "left": -384,
+          "right": -54,
+          "pos": "absolute"
+        },
+        {
+          "tag": "span",
+          "cls": "_mediaPrompt_131ir_247",
+          "left": -252,
+          "right": -70,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_cardBody_131ir_262",
+          "left": -384,
+          "right": -54,
+          "pos": "static"
+        },
+        {
+          "tag": "div",
+          "cls": "_cardTopRow_131ir_274",
+          "left": -366,
+          "right": -72,
+          "pos": "static"
+        },
+        {
+          "tag": "span",
+          "cls": "_badge_131ir_281 _badge_live_131ir_304",
+          "left": -366,
+          "right": -212,
+          "pos": "static"
+        }
+      ],
+      "offenderCount": 97
+    },
+    "overflowMid": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390
+    },
+    "images": [
+      {
+        "src": "/assets/portrait.png",
+        "ok": true,
+        "nw": 843
+      },
+      {
+        "src": "/images/projects/elephant-grey.jpg",
+        "ok": true,
+        "nw": 2160
+      },
+      {
+        "src": "/images/projects/cerco.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/images/projects/assist-ai.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/images/projects/smart-irrigation.png",
+        "ok": true,
+        "nw": 1800
+      },
+      {
+        "src": "/assets/portrait.png",
+        "ok": true,
+        "nw": 843
+      },
+      {
+        "src": "/assets/portrait.png",
+        "ok": false,
+        "nw": 843
+      }
+    ],
+    "geo": {
+      "top": 1041.203125,
+      "height": 827.578125,
+      "scrollHeight": 6209,
+      "vh": 844
+    },
+    "samples": [
+      {
+        "f": 0,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      },
+      {
+        "f": 0.15,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      },
+      {
+        "f": 0.3,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      },
+      {
+        "f": 0.45,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      },
+      {
+        "f": 0.6,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      },
+      {
+        "f": 0.75,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      },
+      {
+        "f": 0.9,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      },
+      {
+        "f": 1,
+        "scrollY": 1041,
+        "deScrollWidth": 390,
+        "deClientWidth": 390,
+        "cards": [
+          {
+            "left": -385,
+            "right": -53,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": -37,
+            "right": 294,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 310,
+            "right": 642,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          },
+          {
+            "left": 658,
+            "right": 989,
+            "w": 332,
+            "z": "auto",
+            "transform": "none",
+            "op": "1"
+          }
+        ],
+        "pinned": {
+          "top": 0,
+          "pos": "relative"
+        }
+      }
+    ],
+    "errors": [],
+    "failed": []
+  }
+}

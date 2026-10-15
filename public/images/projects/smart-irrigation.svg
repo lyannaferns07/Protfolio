@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="iot-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081813" />
+      <stop offset="50%" stop-color="#102b22" />
+      <stop offset="100%" stop-color="#05120d" />
+    </linearGradient>
+    <linearGradient id="iot-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <pattern id="circuit-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16, 185, 129, 0.07)" stroke-width="1"/>
+      <circle cx="0" cy="0" r="2" fill="rgba(16, 185, 129, 0.2)" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#iot-bg)" />
+  <rect width="1200" height="675" fill="url(#circuit-grid)" />
+
+  <!-- IoT Telemetry Console Frame -->
+  <g transform="translate(100, 75)">
+    <rect width="1000" height="525" rx="16" fill="rgba(10, 24, 19, 0.95)" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1.5" />
+
+    <!-- Window Top Header -->
+    <rect width="1000" height="54" rx="16" fill="rgba(255, 255, 255, 0.03)" />
+    <circle cx="36" cy="27" r="6" fill="#ef4444" opacity="0.8" />
+    <circle cx="56" cy="27" r="6" fill="#eab308" opacity="0.8" />
+    <circle cx="76" cy="27" r="6" fill="#22c55e" opacity="0.8" />
+    <text x="500" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="500" fill="#6ee7b7" text-anchor="middle">Smart Irrigation Telemetry &#8226; Sensor Node [Node-01]</text>
+
+    <!-- Top Status Bar in Console -->
+    <g transform="translate(40, 75)">
+      <!-- Metric 1 -->
+      <rect x="0" y="0" width="285" height="100" rx="10" fill="rgba(16, 185, 129, 0.08)" stroke="rgba(16, 185, 129, 0.2)" />
+      <text x="20" y="34" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#6ee7b7" text-transform="uppercase">SOIL MOISTURE</text>
+      <text x="20" y="76" font-family="-apple-system, sans-serif" font-size="32" font-weight="700" fill="#f8fafc">68.4%</text>
+      <text x="140" y="74" font-family="-apple-system, sans-serif" font-size="12" fill="#4ade80">&#9679; Optimal range</text>
+
+      <!-- Metric 2 -->
+      <rect x="315" y="0" width="285" height="100" rx="10" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.2)" />
+      <text x="335" y="34" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#7dd3fc" text-transform="uppercase">WATER VALVE STATUS</text>
+      <text x="335" y="76" font-family="-apple-system, sans-serif" font-size="32" font-weight="700" fill="#f8fafc">AUTO</text>
+      <text x="465" y="74" font-family="-apple-system, sans-serif" font-size="12" fill="#38bdf8">Flow: 0.0 L/m</text>
+
+      <!-- Metric 3 -->
+      <rect x="630" y="0" width="290" height="100" rx="10" fill="rgba(250, 204, 21, 0.08)" stroke="rgba(250, 204, 21, 0.2)" />
+      <text x="650" y="34" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#fde047" text-transform="uppercase">AMBIENT TEMP</text>
+      <text x="650" y="76" font-family="-apple-system, sans-serif" font-size="32" font-weight="700" fill="#f8fafc">24.6&#176;C</text>
+      <text x="780" y="74" font-family="-apple-system, sans-serif" font-size="12" fill="#facc15">Humidity: 55%</text>
+    </g>
+
+    <!-- Main Chart & Hardware Telemetry Stream -->
+    <g transform="translate(40, 200)">
+      <rect width="920" height="295" rx="12" fill="rgba(0, 0, 0, 0.3)" stroke="rgba(255, 255, 255, 0.06)" />
+      
+      <text x="24" y="36" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#f8fafc">24-Hour Soil Moisture Telemetry vs. Threshold Trigger</text>
+      
+      <!-- Threshold Line -->
+      <line x1="24" y1="180" x2="896" y2="180" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,6" opacity="0.6" />
+      <text x="710" y="174" font-family="-apple-system, sans-serif" font-size="11" fill="#f87171">Trigger Threshold (40%)</text>
+
+      <!-- Moisture Curve -->
+      <path d="M 24 90 C 150 70, 240 120, 360 140 C 480 160, 560 195, 620 185 C 660 130, 720 80, 896 95" fill="none" stroke="#10b981" stroke-width="3.5" />
+      <path d="M 24 90 C 150 70, 240 120, 360 140 C 480 160, 560 195, 620 185 C 660 130, 720 80, 896 95 L 896 260 L 24 260 Z" fill="url(#iot-green)" opacity="0.12" />
+
+      <!-- Pulse indicator at trigger point -->
+      <circle cx="620" cy="185" r="8" fill="#10b981" />
+      <circle cx="620" cy="185" r="16" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.6" />
+      <text x="635" y="215" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#6ee7b7">Auto-Irrigation Activated (12 mins)</text>
+
+      <!-- X-axis Timeline Labels -->
+      <g transform="translate(24, 275)">
+        <text x="0" y="0" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">00:00</text>
+        <text x="170" y="0" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">04:00</text>
+        <text x="340" y="0" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">08:00</text>
+        <text x="510" y="0" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">12:00</text>
+        <text x="680" y="0" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">16:00</text>
+        <text x="840" y="0" font-family="-apple-system, sans-serif" font-size="11" fill="#10b981">NOW</text>
+      </g>
+    </g>
+  </g>
+</svg>

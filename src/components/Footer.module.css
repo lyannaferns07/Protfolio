@@ -1,0 +1,96 @@
+/* ============================================================
+   FOOTER — Brand colophon, nav rail, back-to-top
+   ============================================================ */
+
+.root {
+  width: 100%;
+  background: var(--surface);
+  border-top: 1px solid var(--border-light);
+}
+
+.inner {
+  max-width: var(--max-w-7xl);
+  margin-inline: auto;
+  padding: var(--space-xl) var(--margin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--margin-md);
+}
+
+/* ── Brand ──────────────────────────────────────────────── */
+.brandBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--fs-headline-md);
+  line-height: var(--lh-headline-md);
+  letter-spacing: var(--ls-headline-md);
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.colophon {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--on-surface-variant);
+}
+
+/* ── Nav rail ───────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navLink {
+  color: var(--on-surface-variant);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  text-transform: uppercase;
+  transition: color var(--dur-fast) ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+/* ── Back to top ────────────────────────────────────────── */
+.toTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: var(--ls-label-sm);
+  text-transform: uppercase;
+  transition: color var(--dur-fast) ease;
+}
+
+.toTop:hover {
+  color: var(--primary);
+}
+
+/* ── Breakpoints ────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .inner {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: var(--margin-lg);
+    padding-block: var(--space-xl);
+  }
+  .brandBlock {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
