@@ -79,6 +79,9 @@
 
 .toTop:hover {
   color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: var(--lavender-accent-hover);
+  text-underline-offset: 5px;
 }
 
 /* ── Breakpoints ────────────────────────────────────────── */

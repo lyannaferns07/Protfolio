@@ -35,3 +35,4 @@ tsconfig.tsbuildinfo
 # Screenshots / generated tools artifacts
 shots/
 shots-*
+.originkit/

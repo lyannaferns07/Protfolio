@@ -98,6 +98,25 @@
   transition: color var(--dur-fast) ease;
 }
 
+/* Lavender hover underline — a small interactive detail that never
+   competes with the active section's navy rule */
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--lavender-accent-hover);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.navLink:not(.navLinkActive):hover::after {
+  transform: scaleX(1);
+}
+
 .navLink:hover {
   color: var(--primary);
 }
@@ -128,11 +147,15 @@
   line-height: var(--lh-label-sm);
   letter-spacing: var(--ls-label-sm);
   white-space: nowrap;
-  transition: background-color var(--dur-fast) ease;
+  transition: background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
 }
 
+/* Navy button stays navy — a lilac bloom softens the hover only */
 .cta:hover {
-  background: var(--brass-accent-hover);
+  background: #1a2b49;
+  box-shadow:
+    0 4px 14px rgba(17, 28, 50, 0.18),
+    0 0 18px color-mix(in srgb, var(--lavender-accent) 16%, transparent);
 }
 
 .burger {
@@ -208,6 +231,7 @@
 
 .sheetLinkActive {
   color: var(--secondary);
+  border-bottom-color: var(--lavender-accent-hover);
 }
 
 .sheetCta {

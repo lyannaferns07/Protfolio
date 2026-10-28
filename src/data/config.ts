@@ -5,6 +5,11 @@
  * values below and the entire site updates.
  */
 
+export interface HeroStat {
+  label: string;
+  value: string;
+}
+
 export const profile = {
   /** Display name as it appears in the header and footer. */
   name: 'Lyann Fernandes',
@@ -13,14 +18,17 @@ export const profile = {
   /** Location + timezone string shown in the hero eyebrow. */
   locationLine: 'Mumbai, IN [IST / UTC+5:30]',
   /** Hero headline (rendered as one flowing serif block). */
-  headline: 'I build digital experiences that make an impression.',
+  headline: 'I turn ideas into digital experiences.',
+  /** Multi-line hero split copy. */
+  heroLine1: 'I turn ideas into',
+  heroLine2: 'digital experiences.',
   /** Supporting copy beneath the hero headline. */
   tagline:
-    "I'm Lyann, a computer science student and creative developer exploring the intersection of thoughtful web design, modern frontend engineering, and AI.",
+    "I'm Lyann, a computer science student and creative developer exploring thoughtful web design, frontend engineering, and AI.",
   /** Build stamp beside the eyebrow pill. */
-  buildStamp: 'v2025.04.18',
-  /** Availability pill (hidden below lg). */
-  availability: 'Available for select work / Summer 2025',
+  buildStamp: 'Portfolio 2026',
+  /** Availability pill. */
+  availability: 'Open to select projects & internships',
   /** Primary + secondary hero CTA labels. */
   ctaPrimary: 'Explore Selected Work',
   ctaSecondary: 'Get in touch',
@@ -29,11 +37,11 @@ export const profile = {
   /** Location string used in About / Contact. */
   location: 'Mumbai, India (IST / UTC+5:30)',
   /** Academic focus. */
-  education: 'BSc Computer Science',
+  education: 'BSc Computer Science student',
 } as const;
 
 /** Four hairline-delimited stats beneath the hero CTAs. */
-export const heroStats = [
+export const heroStats: readonly HeroStat[] = [
   { label: 'Location', value: 'Mumbai, India (19.0760° N)' },
   { label: 'Focus', value: 'BSc Computer Science' },
   { label: 'Core Stack', value: 'React, TypeScript, Next.js' },
@@ -59,7 +67,7 @@ export const credentials = [
   { key: 'Education',    value: 'BSc in Computer Science, Mumbai University (Final Year)', emphasis: false },
   { key: 'Focus Areas',  value: 'Creative Frontend, UI Systems, AI Integrations', emphasis: false },
   { key: 'Core Standard',value: 'Semantic HTML, 100% Lighthouse, Zero heavy runtimes', emphasis: false },
-  { key: 'Availability', value: 'Summer Internships & Select Client Work (2025)', emphasis: true },
+  { key: 'Availability', value: 'Open to select projects & internships (2026)', emphasis: true },
 ] as const;
 
 /** Three-column "under the hood" capability index in the About section. */

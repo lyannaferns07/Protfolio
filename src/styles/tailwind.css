@@ -150,3 +150,22 @@
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
 }
+
+@keyframes cell-ripple {
+  0% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  38% {
+    background-color: rgba(216, 201, 238, 0.22);
+    box-shadow: 0 0 0 1px rgba(216, 201, 238, 0.28) inset;
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+@utility animate-cell-ripple {
+  animation: cell-ripple var(--duration, 300ms) ease-out var(--delay, 0ms) 1 normal both;
+}

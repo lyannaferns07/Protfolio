@@ -10,9 +10,9 @@
 :root {
   /* ── Colour System ─────────────────────────────────────── */
   /* Light (ivory) palette — the default surface for the site */
-  --background:              #faf9f5;
-  --surface:                 #faf9f5;
-  --surface-bright:          #faf9f5;
+  --background:              #FAF9F6;
+  --surface:                 #FAF9F6;
+  --surface-bright:          #FAF9F6;
   --surface-dim:             #dbdad6;
   --surface-container-lowest:#ffffff;
   --surface-container-low:   #f4f4f0;
@@ -24,8 +24,8 @@
   --card-light:              #ffffff;
 
   /* Dark (navy) palette — used for header buttons, footer, accents */
-  --primary:                 #000b20;
-  --primary-container:       #142238;
+  --primary:                 #111C32;
+  --primary-container:       #111C32;
   --on-primary:              #ffffff;
   --on-primary-container:    #7c8aa4;
   --primary-fixed:           #d6e3ff;
@@ -53,6 +53,18 @@
   --on-tertiary-container:   #7d8a9c;
   --on-tertiary-fixed:       #0f1c2a;
   --on-tertiary-fixed-variant:#3b4857;
+
+  /* Lavender — the muted creative accent family.
+     A supporting accent only: it never carries primary text on ivory.
+     --lavender-accent and --lavender are decorative (hairlines, tints,
+     soft glows); --lavender-ink is the accessible tone for type,
+     underlines and focus rings that need real contrast. */
+  --lavender:                #D8C9EE;   /* main dusty lavender accent  */
+  --lavender-container:      #F0EAF8;   /* pale lavender surface      */
+  --lavender-accent:         #BDA7DB;   /* interactive lilac          */
+  --lavender-accent-hover:   #A78FCB;   /* pressed / emphasised lilac */
+  --lavender-ink:            #4A3D63;   /* deep lavender ink (AA)     */
+  --lavender-border:         #E3D9F2;   /* hairline lavender border   */
 
   --bg-dark:                 #101A29;
   --card-dark:               #1B293B;
@@ -84,6 +96,8 @@
   --color-accent:            var(--secondary);
   --color-border:            var(--border-light);
   --color-muted:             var(--outline);
+  --color-lavender:          var(--lavender);
+  --color-lavender-ink:      var(--lavender-ink);
 
   /* ── Typography ────────────────────────────────────────── */
   --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;

@@ -1,0 +1,244 @@
+/* ============================================================
+   LOADING SCREEN — Editorial Ivory + Lavender Curtain Reveal
+   Reference: Centered minimalist composition with Newsreader serif,
+   dusty-lavender sparkle, delicate orbiting loader, and bottom-to-top
+   synchronized landing page emergence.
+   ============================================================ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Subtle architectural square grid */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(220, 221, 217, 0.40) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 221, 217, 0.40) 1px, transparent 1px);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Extremely soft lavender light centered behind the loader */
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(580px, 85vw);
+  height: min(580px, 85vw);
+  background: radial-gradient(
+    circle,
+    rgba(216, 201, 238, 0.42) 0%,
+    rgba(216, 201, 238, 0.18) 30%,
+    rgba(216, 201, 238, 0.04) 55%,
+    transparent 74%
+  );
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Central composition */
+.composition {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  padding: 0 24px;
+  max-width: 92vw;
+  user-select: none;
+}
+
+/* Monospaced top label */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Name row with sparkle */
+.nameRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6.2vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  color: var(--primary);
+  opacity: 0;
+  transform: translateY(18px);
+  display: inline-block;
+}
+
+.nameSpace {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6.2vw, 84px);
+  white-space: pre;
+}
+
+/* Dusty-lavender sparkle */
+.sparkle {
+  color: var(--lavender-accent);
+  width: clamp(22px, 3.2vw, 36px);
+  height: clamp(22px, 3.2vw, 36px);
+  filter: drop-shadow(0 0 8px rgba(216, 201, 238, 0.85));
+  margin-left: 10px;
+  flex-shrink: 0;
+  align-self: center;
+  opacity: 0;
+}
+
+/* Monospaced tagline */
+.tagline {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-md);
+  line-height: var(--lh-label-md);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Circular loader wrapper */
+.loaderWrap {
+  margin-top: 8px;
+  margin-bottom: 2px;
+  opacity: 0;
+  transform: translateY(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 58px;
+  height: 58px;
+  transform-origin: 50% 50%;
+  overflow: visible;
+}
+
+.loaderTrack {
+  fill: none;
+  stroke: rgba(216, 201, 238, 0.42);
+  stroke-width: 1.2;
+}
+
+.loaderArc {
+  fill: none;
+  stroke: var(--lavender-accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-dasharray: 42 151;
+  stroke-dashoffset: 18;
+  filter: drop-shadow(0 0 6px rgba(189, 167, 219, 0.7));
+}
+
+.loaderOrbHalo {
+  fill: rgba(216, 201, 238, 0.45);
+  filter: blur(2px);
+}
+
+.loaderOrb {
+  fill: #BDA7DB;
+  filter: drop-shadow(0 0 6px rgba(189, 167, 219, 0.95)) drop-shadow(0 0 12px rgba(216, 201, 238, 0.8));
+}
+
+/* Bottom message with thin divider lines */
+.bottom {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.divider {
+  width: 52px;
+  height: 1px;
+  background: rgba(216, 201, 238, 0.6);
+  flex-shrink: 0;
+}
+
+.bottomText {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--outline);
+  white-space: nowrap;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 639px) {
+  .composition {
+    gap: 14px;
+    padding: 0 16px;
+  }
+
+  .label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  .name {
+    font-size: clamp(32px, 8.5vw, 48px);
+  }
+
+  .sparkle {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+  }
+
+  .tagline {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+
+  .loader {
+    width: 48px;
+    height: 48px;
+  }
+
+  .divider {
+    width: 32px;
+  }
+
+  .bottomText {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    transition: opacity 0.3s ease;
+  }
+}

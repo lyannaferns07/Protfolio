@@ -201,8 +201,8 @@
 }
 
 .linkSecondary:hover {
-  border-color: var(--color-secondary);
-  background: rgba(52, 75, 104, 0.04);
+  border-color: var(--lavender-accent-hover);
+  background: color-mix(in srgb, var(--lavender-container) 70%, transparent);
 }
 
 /* ── Case Study ───────────────────────────────── */

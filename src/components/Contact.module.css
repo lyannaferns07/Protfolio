@@ -114,6 +114,11 @@
   text-underline-offset: 8px;
 }
 
+/* Hover keeps the warm brass type; only the rule shifts to lilac */
+.email:hover .emailText {
+  text-decoration-color: var(--lavender-accent-hover);
+}
+
 .copyBtn {
   display: inline-flex;
   align-items: center;
@@ -127,11 +132,12 @@
   font-size: var(--fs-label-sm);
   line-height: var(--lh-label-sm);
   letter-spacing: var(--ls-label-sm);
-  transition: border-color var(--dur-fast) ease;
+  transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease;
 }
 
 .copyBtn:hover {
-  border-color: var(--primary);
+  border-color: var(--lavender-accent-hover);
+  background: color-mix(in srgb, var(--lavender-container) 70%, var(--surface));
 }
 
 /* ── Meta row ───────────────────────────────────────────── */
@@ -206,11 +212,12 @@
   font-size: var(--fs-label-sm);
   line-height: var(--lh-label-sm);
   letter-spacing: var(--ls-label-sm);
-  transition: border-color var(--dur-fast) ease;
+  transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease;
 }
 
 .channel:hover {
-  border-color: var(--primary);
+  border-color: var(--lavender-accent-hover);
+  background: color-mix(in srgb, var(--lavender-container) 70%, var(--surface));
 }
 
 .channelArrow {

@@ -1,4 +1,11 @@
-.main {
+.pageShell {
   position: relative;
-  background: var(--bg);
+  min-height: 100vh;
+  background: var(--background);
+  /*
+   * NOTE: never add `will-change: transform` (or `filter`/`contain`) here.
+   * It turns the shell into a containing block for `position: fixed`
+   * descendants, which breaks GSAP ScrollTrigger pinning (the pinned
+   * stage would stick to the document instead of the viewport).
+   */
 }

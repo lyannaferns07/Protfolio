@@ -1,29 +1,24 @@
 /* ============================================================
-   ABOUT — Philosophy column + credentials table + capability index
+   ABOUT — Editorial Quiet-Luxury Redesign
+   Lyann Fernandes Portfolio
    ============================================================ */
 
 .root {
   background: var(--background);
   border-bottom: 1px solid var(--border-light);
   padding: var(--space-xl) 0;
+  position: relative;
 }
 
 .inner {
   max-width: var(--max-w-7xl);
   margin-inline: auto;
   padding-inline: var(--margin);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ── Left column ────────────────────────────────────────── */
-.left {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
+/* ── Typography & Primitives ─────────────────────────────── */
 .eyebrow {
   display: block;
   margin-bottom: var(--space-sm);
@@ -42,13 +37,13 @@
   letter-spacing: var(--ls-headline-lg-mobile);
   font-weight: 400;
   color: var(--primary);
-  max-width: 20ch;
+  margin: 0;
 }
 
 .pullquote {
-  margin: var(--space-lg) 0;
-  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
-  border-left: 2px solid var(--secondary);
+  padding: var(--space-xs) 0 var(--space-xs) var(--space-md);
+  border-left: 2px solid var(--lavender-accent-hover);
+  margin: 0;
 }
 
 .pullquote p {
@@ -57,26 +52,99 @@
   font-size: var(--fs-headline-md-mobile);
   line-height: 1.35;
   color: var(--primary);
+  margin: 0;
 }
 
 .body {
   font-size: var(--fs-body-md);
   line-height: var(--lh-body-md);
   color: var(--on-surface-variant);
+  margin: 0;
 }
 
+.paragraphBlock {
+  padding: 0;
+}
+
+/* ── Portrait Treatment (Quiet-Luxury, Editorial) ────────── */
+.portraitWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+/* Subtle Lavender Mist offset layer behind with thin Muted Lilac border */
+.portraitBackdrop {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: -10px;
+  bottom: -10px;
+  background: var(--lavender-container); /* #F0EAF8 */
+  border: 1px solid var(--lavender-accent);    /* #BDA7DB */
+  border-radius: var(--radius-md);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.portraitFigure {
+  position: relative;
+  z-index: 1;
+  background: var(--card-light);
+  border: 1px solid var(--border-light); /* #DCDDD9 */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.portraitImgWrap {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+  background: var(--surface-container-low);
+}
+
+.portraitImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+
+.portraitCaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--surface);
+  border-top: 1px solid var(--border-light);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.08em;
+  color: var(--outline);
+  text-transform: uppercase;
+}
+
+/* ── Badge Card ─────────────────────────────────────────── */
 .badgeCard {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-md);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   background: var(--card-light);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .badgeCardIcon {
-  color: var(--secondary);
+  color: var(--lavender-ink);
+  flex-shrink: 0;
 }
 
 .badgeCardTitle {
@@ -86,21 +154,17 @@
   letter-spacing: var(--ls-label-md);
   font-weight: 600;
   color: var(--primary);
+  margin: 0;
 }
 
 .badgeCardSub {
   font-size: var(--fs-body-sm);
   line-height: var(--lh-body-sm);
   color: var(--on-surface-variant);
+  margin: 2px 0 0 0;
 }
 
-/* ── Right column ───────────────────────────────────────── */
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
+/* ── Narrative Card ─────────────────────────────────────── */
 .narrative {
   display: flex;
   flex-direction: column;
@@ -109,6 +173,7 @@
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   background: var(--card-light);
+  box-shadow: var(--shadow-sm);
 }
 
 .narrativeTitle {
@@ -121,12 +186,13 @@
   color: var(--primary);
 }
 
-/* ── Credentials table ──────────────────────────────────── */
+/* ── Credentials Table ──────────────────────────────────── */
 .table {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--card-light);
+  box-shadow: var(--shadow-sm);
 }
 
 .tableHead {
@@ -158,6 +224,8 @@
 }
 
 .tableBody {
+  margin: 0;
+  padding: 0;
   font-size: var(--fs-body-sm);
   line-height: var(--lh-body-sm);
 }
@@ -184,6 +252,7 @@
 }
 
 .tableValue {
+  margin: 0;
   color: var(--primary);
   display: inline-flex;
   align-items: center;
@@ -202,7 +271,11 @@
   flex: none;
 }
 
-/* ── Capability index ───────────────────────────────────── */
+/* ── Capability Index (Row C) ───────────────────────────── */
+.rowC {
+  margin-top: 64px;
+}
+
 .indexLabel {
   margin-bottom: var(--space-md);
   color: var(--secondary);
@@ -220,10 +293,13 @@
 }
 
 .indexCard {
+  display: flex;
+  flex-direction: column;
   padding: var(--space-md);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   background: var(--card-light);
+  box-shadow: var(--shadow-sm);
 }
 
 .indexTitle {
@@ -239,13 +315,13 @@
 .indexList {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .indexItem {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: var(--fs-body-sm);
   line-height: var(--lh-body-sm);
   color: var(--primary);
@@ -255,31 +331,263 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--secondary);
+  background: var(--lavender-accent-hover);
   flex: none;
 }
 
-/* ── Breakpoints ────────────────────────────────────────── */
-@media (min-width: 768px) {
-  .root { padding: var(--margin-lg) 0; }
-  .inner { padding-inline: var(--margin-lg); }
-  .narrative { padding: 40px; }
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* ── Mobile (<640px) ─────────────────────────────────────── */
+@media (max-width: 639px) {
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-inline: var(--margin);
+    overflow-x: clip;
+  }
+
+  /* Flatten wrappers so children follow exact single-column spec:
+     label -> heading -> photo -> quote -> badge -> card -> paragraph -> credentials -> capabilities */
+  .rowA,
+  .rowB,
+  .leftCol,
+  .stickyContainer,
+  .rightCol {
+    display: contents;
+  }
+
+  .headerText {
+    order: 1;
+  }
+
+  .portraitWrapper {
+    order: 2;
+    max-width: 100%;
+    width: calc(100% - 12px);
+    margin-right: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    top: auto;
+  }
+
+  .headerQuoteWrap {
+    order: 3;
+    margin-top: 4px;
+  }
+
+  .badgeCard {
+    order: 4;
+    max-width: 100%;
+  }
+
+  .narrative {
+    order: 5;
+    padding: var(--space-md);
+  }
+
+  .paragraphBlock {
+    order: 6;
+  }
+
+  .table {
+    order: 7;
+  }
+
+  .rowC {
+    order: 8;
+    margin-top: 24px;
+  }
+}
+
+/* ── Tablet (640px – 1023px) ─────────────────────────────── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .root {
+    padding: var(--margin-md) 0;
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 36px;
+    row-gap: 28px;
+    align-items: start;
+    padding-inline: var(--margin-md);
+  }
+
+  .rowA,
+  .rowB,
+  .leftCol,
+  .stickyContainer,
+  .rightCol {
+    display: contents;
+  }
+
+  /* 2-column header: photo beside heading */
+  .headerText {
+    grid-column: 1 / 2;
+    order: 1;
+    align-self: center;
+  }
+
+  .portraitWrapper {
+    grid-column: 2 / 3;
+    order: 2;
+    max-width: 100%;
+    width: calc(100% - 12px);
+    margin-right: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    top: auto;
+  }
+
+  /* Remaining content stacks single-column across both grid columns */
+  .headerQuoteWrap {
+    grid-column: 1 / -1;
+    order: 3;
+    margin-top: 8px;
+  }
+
+  .badgeCard {
+    grid-column: 1 / -1;
+    order: 4;
+    max-width: 100%;
+  }
+
+  .narrative {
+    grid-column: 1 / -1;
+    order: 5;
+    padding: 32px;
+  }
+
+  .paragraphBlock {
+    grid-column: 1 / -1;
+    order: 6;
+  }
+
+  .table {
+    grid-column: 1 / -1;
+    order: 7;
+  }
+
   .tableRow {
     grid-template-columns: 1fr 2fr;
     align-items: center;
   }
-  .indexGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .pullquote p { font-size: var(--fs-headline-md); }
+
+  /* Capabilities: 2 columns + 1 */
+  .rowC {
+    grid-column: 1 / -1;
+    order: 8;
+    margin-top: 48px;
+  }
+
+  .indexGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heading {
+    font-size: var(--fs-headline-lg);
+    line-height: var(--lh-headline-lg);
+  }
+
+  .pullquote p {
+    font-size: var(--fs-headline-md);
+  }
 }
 
+/* ── Desktop (≥1024px) ───────────────────────────────────── */
 @media (min-width: 1024px) {
-  .inner {
-    grid-template-columns: 5fr 7fr;
-    gap: 64px;
+  .root {
+    padding: var(--margin-lg) 0;
   }
+
+  .inner {
+    padding-inline: var(--margin-lg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Row A – Intro header (full width) */
+  .rowA {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 96px;
+  }
+
   .heading {
     font-size: var(--fs-headline-lg);
     line-height: var(--lh-headline-lg);
     letter-spacing: var(--ls-headline-lg);
+    /* 8 cols wide so it breaks into 2 lines instead of 3 */
+    max-width: 25ch;
+  }
+
+  .headerQuoteWrap {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 6px;
+  }
+
+  .pullquote p {
+    font-size: var(--fs-headline-md);
+  }
+
+  /* Row B – Main two-column split */
+  .rowB {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  /* LEFT (5 cols): Sticky portrait & Lighthouse badge */
+  .leftCol {
+    position: sticky;
+    top: calc(var(--header-h) + 32px);
+    align-self: start;
+  }
+
+  .stickyContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+  }
+
+  .portraitWrapper {
+    width: calc(100% - 12px);
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* RIGHT (7 cols): Narrative card -> Long paragraph -> Credentials */
+  .rightCol {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .narrative {
+    padding: 40px;
+  }
+
+  .tableRow {
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+
+  /* Row C – Technical Capabilities (full width) */
+  .rowC {
+    margin-top: 112px;
+  }
+
+  .indexGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
   }
 }

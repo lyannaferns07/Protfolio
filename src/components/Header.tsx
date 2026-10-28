@@ -88,10 +88,12 @@ export function Header() {
           <a href="#home" className={s.logo} aria-label={`${profile.name} — home`}>
             {profile.name}
           </a>
-          <span className={s.availability}>
-            <span className={s.availabilityDot} aria-hidden="true" />
-            {profile.availability}
-          </span>
+          {'availability' in profile && profile.availability && (
+            <span className={s.availability}>
+              <span className={s.availabilityDot} aria-hidden="true" />
+              {profile.availability}
+            </span>
+          )}
         </div>
 
         {/* Desktop nav */}

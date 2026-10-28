@@ -1,5 +1,6 @@
 /* ============================================================
-   HERO — Ivory canvas, 40px hairline grid, serif display type
+   HERO — Ivory canvas, editorial serif display type, 
+   asymmetric dual-column composition with layered project windows
    ============================================================ */
 
 .root {
@@ -7,9 +8,13 @@
   border-bottom: 1px solid var(--border-light);
   background: var(--background);
   overflow: hidden;
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Fine architectural grid, exactly as in the Stitch design */
+/* Fine architectural grid texture */
 .grid {
   position: absolute;
   inset: 0;
@@ -18,153 +23,791 @@
     linear-gradient(to right, rgba(220, 221, 217, 0.45) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(220, 221, 217, 0.45) 1px, transparent 1px);
   pointer-events: none;
+  z-index: 0;
+
+  /* Glow custom properties — updated by the RAF loop, never via React state */
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-opacity: 0;
+}
+
+/* Cursor spotlight: a restrained lavender bloom that melts into the
+   existing warm champagne falloff. A pseudo-element keeps it isolated to
+   the grid — text and buttons are higher in the z-stack and are not
+   affected. The default grid lines and background stay ivory. */
+.grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* The spotlight is a circular radial gradient centred on --glow-x / --glow-y.
+     Inner colour is the dusty lavender (#D8C9EE) at low opacity so it never
+     overwhelms the ivory background; it fades through champagne and then to
+     fully transparent at ~320px, so only the cells closest to the cursor lift. */
+  background: radial-gradient(
+    circle 320px at var(--glow-x) var(--glow-y),
+    rgba(216, 201, 238, 0.30) 0%,
+    rgba(216, 201, 238, 0.16) 28%,
+    rgba(212, 185, 149, 0.09) 52%,
+    rgba(212, 185, 149, 0.02) 74%,
+    transparent 100%
+  );
+  opacity: var(--glow-opacity);
+  /* Fade in/out when the cursor enters or leaves — CSS transition, no JS */
+  transition: opacity 0.55s ease;
+  pointer-events: none;
+}
+
+
+/* Radial ambient warm champagne highlight behind the visual column,
+   with a whisper of lavender folded into the mid-tones */
+.ambientLight {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 65vw;
+  height: 80vh;
+  max-width: 900px;
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(240, 221, 192, 0.34) 0%,
+    rgba(216, 201, 238, 0.15) 34%,
+    rgba(242, 224, 195, 0.10) 56%,
+    rgba(250, 249, 246, 0) 76%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .inner {
   position: relative;
+  z-index: 1;
   max-width: var(--max-w-7xl);
+  width: 100%;
   margin-inline: auto;
-  padding: var(--space-xl) var(--margin) 64px;
+  padding: clamp(32px, 5vw, 64px) var(--margin) 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* ── Eyebrow row ────────────────────────────────────────── */
+/* ── Asymmetric Two-Column Desktop Grid ────────────────────── */
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .mainLayout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+    gap: clamp(40px, 4.5vw, 72px);
+    padding-bottom: 24px;
+  }
+}
+
+/* ── Left Column: Content ──────────────────────────────────── */
+.columnContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Eyebrow & Status Pills */
 .eyebrowRow {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--margin-md);
+  gap: 10px;
+  margin-bottom: 24px;
 }
 
-.eyebrowPill {
-  padding: 4px 12px;
+.rolePill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
   border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--secondary-container) 50%, transparent);
+  background: color-mix(in srgb, var(--secondary-container) 45%, transparent);
   border: 1px solid var(--secondary-container);
   color: var(--secondary);
   font-family: var(--font-mono);
   font-size: var(--fs-label-sm);
   line-height: var(--lh-label-sm);
   letter-spacing: 0.08em;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
-.buildStamp {
+.statusPill {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border-light);
+  color: var(--on-surface-variant);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  line-height: var(--lh-label-sm);
+  letter-spacing: 0.06em;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  display: inline-block;
+  animation: pulseDot 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.7;
+  }
+}
+
+.locationPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: var(--outline);
   font-family: var(--font-mono);
   font-size: var(--fs-label-sm);
   line-height: var(--lh-label-sm);
-  letter-spacing: var(--ls-label-sm);
+  letter-spacing: 0.05em;
 }
 
-/* ── Headline ───────────────────────────────────────────── */
+/* ── Editorial Serif Display Headline ──────────────────────── */
 .headline {
-  max-width: 20ch;
-  margin: var(--space-lg) 0;
   font-family: var(--font-display);
-  font-size: var(--fs-display-hero-mobile);
-  line-height: var(--lh-display-hero-mobile);
-  letter-spacing: var(--ls-display-hero-mobile);
+  font-size: clamp(40px, 5.2vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   font-weight: 400;
   color: var(--primary);
+  margin: 0 0 24px 0;
+  max-width: 14ch;
 }
 
-/* ── Tagline ────────────────────────────────────────────── */
+.revealLine {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.05em;
+}
+
+.revealInner {
+  display: block;
+  will-change: transform, opacity;
+  transition: transform 0.85s var(--ease-out), opacity 0.85s ease;
+}
+
+.headline.hidden .revealInner {
+  transform: translateY(115%);
+  opacity: 0;
+}
+
+.headline.visible .revealInner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.italicAccent {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--secondary);
+  letter-spacing: -0.015em;
+}
+
+/* ── Introduction copy ─────────────────────────────────────── */
 .tagline {
-  max-width: 46ch;
-  margin-bottom: 40px;
-  font-size: var(--fs-body-lg);
-  line-height: var(--lh-body-lg);
+  max-width: 48ch;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.6;
   color: var(--on-surface-variant);
+  margin-bottom: 36px;
+  font-weight: 400;
 }
 
-/* ── CTAs ───────────────────────────────────────────────── */
+/* ── CTA buttons ───────────────────────────────────────────── */
 .ctas {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--margin-lg);
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
 .ctaPrimary,
 .ctaSecondary {
+  position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 13px 26px;
   border-radius: var(--radius-md);
+  font-family: var(--font-body);
   font-size: var(--fs-body-md);
   line-height: var(--lh-body-md);
+  font-weight: 500;
+  cursor: pointer;
   transition:
+    transform var(--dur-fast) var(--ease-out),
     background-color var(--dur-fast) ease,
     border-color var(--dur-fast) ease,
-    color var(--dur-fast) ease;
+    color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease;
+  user-select: none;
 }
 
 .ctaPrimary {
   background: var(--primary-container);
   color: var(--surface-container-lowest);
+  border: 1px solid var(--primary-container);
+  box-shadow: 0 4px 12px rgba(20, 34, 56, 0.15);
 }
 
 .ctaPrimary:hover {
-  background: var(--brass-accent-hover);
+  background: #1a2b49;
+  border-color: #1a2b49;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(17, 28, 50, 0.22),
+    0 0 22px color-mix(in srgb, var(--lavender-accent) 16%, transparent);
+  color: #ffffff;
+}
+
+.ctaPrimary:hover .ctaIconDown {
+  transform: translateY(3px);
 }
 
 .ctaSecondary {
-  border: 1px solid var(--border-light);
   background: var(--card-light);
   color: var(--primary);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
 }
 
 .ctaSecondary:hover {
-  border-color: var(--primary);
+  border-color: var(--lavender-accent-hover);
+  background: color-mix(in srgb, var(--lavender-container) 70%, var(--surface-container-low));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 11, 32, 0.08);
 }
 
-/* ── Metadata stats ─────────────────────────────────────── */
-.stats {
+.ctaSecondary:hover .ctaIconOut {
+  transform: translate(2px, -2px);
+}
+
+.ctaIconDown,
+.ctaIconOut {
+  transition: transform var(--dur-fast) ease;
+}
+
+/* Tech Pills Row */
+.techPills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.techPillLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  letter-spacing: 0.08em;
+  color: var(--outline);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.techPill {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label-sm);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  border: 1px solid var(--border-light);
+}
+
+/* ── Right Column: Layered Mockups Composition ─────────────── */
+.columnVisual {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin-inline: auto;
+  perspective: 1200px;
+  padding: 20px 0 30px;
+}
+
+.visualContainer {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+  .visualContainer {
+    min-height: 480px;
+  }
+}
+
+/* Abstract Architectural Geometry Background */
+.ambientGraphic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translate3d(calc(var(--px, 0) * 8px), calc(var(--py, 0) * 8px), -30px);
+  width: 110%;
+  height: 110%;
+  pointer-events: none;
+  opacity: 0.75;
+  transition: transform 0.3s ease-out;
+}
+
+/* ── Secondary Background Window: Cerco ─────────────────────── */
+.secondaryWindow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 74%;
+  background: var(--card-light);
+  border: 1px solid rgba(220, 221, 217, 0.85);
+  border-radius: var(--radius-md);
+  box-shadow: 
+    0 10px 24px -8px rgba(0, 11, 32, 0.08),
+    0 0 0 1px rgba(0, 11, 32, 0.03);
+  overflow: hidden;
+  transform: translate3d(calc(var(--px, 0) * 16px), calc(var(--py, 0) * 16px), 0) rotate(1.5deg);
+  transition:
+    transform 0.4s var(--ease-out),
+    box-shadow 0.4s var(--ease-out),
+    opacity 0.8s ease;
+  z-index: 1;
+}
+
+.secondaryWindow:hover {
+  transform: translate3d(calc(var(--px, 0) * 16px), calc(var(--py, 0) * 16px - 4px), 10px) rotate(0.5deg);
+  box-shadow: 
+    0 18px 36px -10px rgba(0, 11, 32, 0.12),
+    0 0 0 1px rgba(106, 93, 70, 0.25);
+  z-index: 3;
+}
+
+/* ── Primary Foreground Window: Elephant Grey ───────────────── */
+.primaryWindow {
+  position: relative;
+  width: 86%;
+  margin-top: 64px;
+  margin-left: 0;
+  background: var(--card-light);
+  border: 1px solid rgba(200, 201, 197, 0.9);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 11, 32, 0.14),
+    0 4px 16px rgba(0, 11, 32, 0.04),
+    0 0 0 1px rgba(106, 93, 70, 0.12);
+  overflow: hidden;
+  transform: translate3d(calc(var(--px, 0) * -12px), calc(var(--py, 0) * -12px), 20px);
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
+    opacity 0.8s ease;
+  z-index: 2;
+}
+
+.primaryWindow:hover {
+  transform: translate3d(calc(var(--px, 0) * -12px), calc(var(--py, 0) * -12px - 6px), 30px);
+  box-shadow: 
+    0 32px 64px -14px rgba(0, 11, 32, 0.18),
+    0 8px 24px rgba(0, 11, 32, 0.06),
+    0 0 0 1px rgba(106, 93, 70, 0.3);
+}
+
+/* Window Chrome Topbar */
+.windowBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f7f6f2;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.windowDots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.windowDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+
+.windowDotClose { background: #e28e82; }
+.windowDotMin { background: #e5c378; }
+.windowDotMax { background: #9ecb9b; }
+
+.windowUrl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.02em;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.windowBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Window Image Frame */
+.windowBody {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-container-low);
+}
+
+.windowImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.primaryWindow:hover .windowImg {
+  transform: scale(1.02);
+}
+
+/* Subtle overlay on primary window hover */
+.windowOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 11, 32, 0.45) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 16px;
+}
+
+.primaryWindow:hover .windowOverlay {
+  opacity: 1;
+}
+
+.overlayText {
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Floating Technical Card (Telemetry / Rigor) ───────────── */
+.floatingCard {
+  position: absolute;
+  bottom: 12px;
+  right: -8px;
+  width: 240px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(220, 221, 217, 0.95);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  box-shadow: 
+    0 16px 32px -8px rgba(0, 11, 32, 0.12),
+    0 2px 8px rgba(0, 11, 32, 0.04);
+  transform: translate3d(calc(var(--px, 0) * -24px), calc(var(--py, 0) * -24px), 35px);
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
+    opacity 0.8s ease;
+  z-index: 4;
+}
+
+.floatingCard:hover {
+  transform: translate3d(calc(var(--px, 0) * -24px), calc(var(--py, 0) * -24px - 4px), 45px);
+  box-shadow: 
+    0 22px 42px -10px rgba(0, 11, 32, 0.18),
+    0 0 0 1px rgba(106, 93, 70, 0.3);
+}
+
+.floatingCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.floatingCardTitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.floatingMetrics {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.metricItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.metricKey {
+  color: var(--outline);
+}
+
+.metricVal {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.metricBadge {
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+}
+
+/* ── Entrance Animation Staging ────────────────────────────── */
+.staggerItem {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.75s var(--ease-out),
+    transform 0.75s var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.mounted .staggerItem {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays */
+.delay1 { transition-delay: 0.08s; }
+.delay2 { transition-delay: 0.20s; }
+.delay3 { transition-delay: 0.32s; }
+.delay4 { transition-delay: 0.44s; }
+.delay5 { transition-delay: 0.56s; }
+
+/* ── Metadata Stats Rail (Bridging to Workshop) ────────────── */
+.statsRail {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border-light);
+  /* A whisper of lavender carries the eye from the hero into the
+     Workshop's tinted stage without leaving the ivory family */
+  background: color-mix(in srgb, var(--lavender-container) 45%, var(--surface-container-low));
+}
+
+.statsInner {
+  max-width: var(--max-w-7xl);
+  margin-inline: auto;
+  padding: 18px var(--margin);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg) var(--space-lg);
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--border-light);
+  gap: 16px 24px;
 }
 
-.stat {
-  padding-left: var(--space-sm);
+@media (min-width: 768px) {
+  .statsInner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-block: 22px;
+  }
+}
+
+.statCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   border-left: 1px solid var(--border-light);
+  padding-left: 14px;
+}
+
+.statIndex {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .statLabel {
-  margin-bottom: 2px;
-  color: var(--outline);
   font-family: var(--font-mono);
   font-size: var(--fs-label-sm);
   line-height: var(--lh-label-sm);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  color: var(--outline);
   text-transform: uppercase;
 }
 
 .statValue {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
   color: var(--primary);
-  font-size: var(--fs-body-md);
-  line-height: var(--lh-body-md);
   font-weight: 500;
+  margin-top: 1px;
 }
 
-/* ── Breakpoints ────────────────────────────────────────── */
-@media (min-width: 768px) {
-  .inner { padding: var(--margin-lg) var(--margin-lg) 112px; }
-  .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
+/* ── Mobile Layout Fine-Tuning ─────────────────────────────── */
+@media (max-width: 767px) {
+  .inner {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 
-@media (min-width: 1024px) {
   .headline {
-    font-size: var(--fs-display-hero);
-    line-height: var(--lh-display-hero);
-    letter-spacing: var(--ls-display-hero);
+    font-size: 34px;
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+
+  .tagline {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .ctas {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .columnVisual {
+    max-width: 100%;
+    padding: 10px 0 20px;
+  }
+
+  .visualContainer {
+    min-height: 340px;
+  }
+
+  .secondaryWindow {
+    width: 82%;
+  }
+
+  .primaryWindow {
+    width: 90%;
+    margin-top: 48px;
+  }
+
+  .floatingCard {
+    width: 200px;
+    bottom: -6px;
+    right: 4px;
+    padding: 10px 12px;
+  }
+
+  .windowUrl {
+    max-width: 130px;
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .windowBadge {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+}
+
+/* ── Prefers-Reduced-Motion ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .staggerItem,
+  .revealInner,
+  .visualContainer,
+  .primaryWindow,
+  .secondaryWindow,
+  .floatingCard,
+  .ambientGraphic,
+  .statusDot,
+  .ctaPrimary,
+  .ctaSecondary,
+  .ctaIconDown,
+  .ctaIconOut,
+  .windowImg {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .headline.hidden .revealInner {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Disable cursor glow entirely for reduced-motion users */
+  .grid::after {
+    display: none !important;
   }
 }
