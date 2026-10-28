@@ -3,6 +3,7 @@ import { profile, heroStats, type HeroStat } from '../data/config';
 import { projects } from '../data/projects';
 import { Icon } from './Icon';
 import { BackgroundRippleEffect } from './ui/background-ripple-effect';
+import { Compare } from './ui/compare';
 import s from './Hero.module.css';
 
 /**
@@ -204,156 +205,69 @@ export function Hero() {
             </div>
           </div>
 
-          {/* ── Right Column: Layered Project Windows Visual ── */}
+          {/* ── Right Column: Interactive Aceternity UI Compare Visual ── */}
           <div className={`${s.columnVisual} ${s.staggerItem} ${s.delay2}`}>
             <div ref={visualRef} className={s.visualContainer}>
-              {/* Restrained architectural geometry graphic */}
-              <svg
-                className={s.ambientGraphic}
-                viewBox="0 0 540 500"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                {/* Concentric coordinate rings — the outer ring keeps the
-                    champagne grounding, the inner pair carry the lavender */}
-                <circle
-                  cx="280"
-                  cy="250"
-                  r="210"
-                  style={{ stroke: 'var(--secondary)' }}
-                  strokeWidth="0.8"
-                  strokeDasharray="4 8"
-                  opacity="0.3"
-                />
-                <circle
-                  cx="280"
-                  cy="250"
-                  r="150"
-                  style={{ stroke: 'var(--lavender-accent)' }}
-                  strokeWidth="0.8"
-                  opacity="0.35"
-                />
-                <circle
-                  cx="280"
-                  cy="250"
-                  r="85"
-                  style={{ stroke: 'var(--lavender-accent)' }}
-                  strokeWidth="0.6"
-                  strokeDasharray="2 6"
-                  opacity="0.5"
-                />
-
-                {/* Fine crosshairs & framing lines */}
-                <line
-                  x1="70"
-                  y1="250"
-                  x2="490"
-                  y2="250"
-                  style={{ stroke: 'var(--border-light)' }}
-                  strokeWidth="1"
-                  strokeDasharray="8 12"
-                  opacity="0.6"
-                />
-                <line
-                  x1="280"
-                  y1="40"
-                  x2="280"
-                  y2="460"
-                  style={{ stroke: 'var(--border-light)' }}
-                  strokeWidth="1"
-                  strokeDasharray="8 12"
-                  opacity="0.6"
-                />
-
-                {/* Subtle corner ticks */}
-                <path d="M 40 40 L 60 40 M 40 40 L 40 60" style={{ stroke: 'var(--lavender-accent)' }} strokeWidth="1" opacity="0.5" />
-                <path d="M 500 40 L 480 40 M 500 40 L 500 60" style={{ stroke: 'var(--lavender-accent)' }} strokeWidth="1" opacity="0.5" />
-                <path d="M 40 460 L 60 460 M 40 460 L 40 440" style={{ stroke: 'var(--lavender-accent)' }} strokeWidth="1" opacity="0.5" />
-                <path d="M 500 460 L 480 460 M 500 460 L 500 440" style={{ stroke: 'var(--lavender-accent)' }} strokeWidth="1" opacity="0.5" />
-              </svg>
-
-              {/* ── Secondary Layered Window: Cerco Project ──── */}
-              <div className={s.secondaryWindow}>
-                <div className={s.windowBar}>
+              <div className={s.compareFrame}>
+                {/* Minimalist Editorial Window Header */}
+                <div className={s.compareHeader}>
                   <div className={s.windowDots}>
                     <span className={`${s.windowDot} ${s.windowDotClose}`} />
                     <span className={`${s.windowDot} ${s.windowDotMin}`} />
                     <span className={`${s.windowDot} ${s.windowDotMax}`} />
                   </div>
-                  <div className={s.windowUrl}>
-                    <Icon name={cerco.frameIcon || 'tune'} size={11} />
-                    <span>{cerco.frameUrl}</span>
+                  <div className={s.compareUrl}>
+                    <Icon name="compare_arrows" size={13} />
+                    <span>elephant-grey ⟷ cerco</span>
                   </div>
-                  <span className={s.windowBadge}>{cerco.discipline}</span>
+                  <span className={s.compareBadge}>Interactive</span>
                 </div>
-                <div className={s.windowBody}>
-                  <img
-                    src={cerco.mockup}
-                    alt={cerco.mockupAlt}
-                    className={s.windowImg}
-                    loading="eager"
-                    decoding="async"
-                  />
-                </div>
-              </div>
 
-              {/* ── Primary Prominent Window: Elephant Grey ──── */}
-              <div className={s.primaryWindow}>
-                <div className={s.windowBar}>
-                  <div className={s.windowDots}>
-                    <span className={`${s.windowDot} ${s.windowDotClose}`} />
-                    <span className={`${s.windowDot} ${s.windowDotMin}`} />
-                    <span className={`${s.windowDot} ${s.windowDotMax}`} />
-                  </div>
-                  <div className={s.windowUrl}>
-                    <Icon name={elephantGrey.frameIcon || 'lock'} size={11} />
-                    <span>{elephantGrey.frameUrl}</span>
-                  </div>
-                  <span className={s.windowBadge}>01 / Client Flagship</span>
-                </div>
-                <div className={s.windowBody}>
-                  <img
-                    src={elephantGrey.mockup}
-                    alt={elephantGrey.mockupAlt}
-                    className={s.windowImg}
-                    loading="eager"
-                    decoding="async"
-                  />
-                  <a
-                    href="#workshop"
-                    className={s.windowOverlay}
-                    aria-label={`View ${elephantGrey.title} case study in Workshop`}
-                  >
-                    <span className={s.overlayText}>
-                      Explore Case Study
-                      <Icon name="arrow_forward" size={14} />
+                {/* Aceternity UI Compare Slider */}
+                <Compare
+                  firstImage={elephantGrey.image}
+                  secondImage={cerco.image}
+                  firstImageAlt={`${elephantGrey.title} — Atelier architecture digital flagship preview`}
+                  secondImageAlt={`${cerco.title} — Contextual service discovery platform interface`}
+                  firstImageClassName="object-cover object-top"
+                  secondImageClassname="object-cover object-top"
+                  className={s.compareComponent}
+                  slideMode="hover"
+                  initialSliderPercentage={50}
+                  showHandlebar={true}
+                  showSparkles={true}
+                  firstImageLabel={
+                    <span className={s.floatingBadge}>
+                      <span className={s.badgeDotGreen} aria-hidden="true" />
+                      <span className={s.badgeFull}>01 / Elephant Grey · Flagship</span>
+                      <span className={s.badgeShort}>01 / Elephant Grey</span>
                     </span>
-                  </a>
-                </div>
-              </div>
+                  }
+                  secondImageLabel={
+                    <span className={s.floatingBadge}>
+                      <span className={s.badgeDotLavender} aria-hidden="true" />
+                      <span className={s.badgeFull}>02 / Cerco · Platform UI</span>
+                      <span className={s.badgeShort}>02 / Cerco</span>
+                    </span>
+                  }
+                />
 
-              {/* ── Floating Technical Telemetry Card ───────── */}
-              <div className={s.floatingCard}>
-                <div className={s.floatingCardHeader}>
-                  <span className={s.floatingCardTitle}>
-                    <Icon name="terminal" size={13} />
-                    Frontend Rigor
-                  </span>
-                  <span className={s.metricBadge}>Verified</span>
-                </div>
-                <div className={s.floatingMetrics}>
-                  <div className={s.metricItem}>
-                    <span className={s.metricKey}>Lighthouse Perf</span>
-                    <span className={s.metricVal}>100 / 100</span>
+                {/* Subtle Editorial Meta Strip */}
+                <div className={s.compareFooter}>
+                  <div className={s.compareFooterItem}>
+                    <span className={s.badgeDotGreen} aria-hidden="true" />
+                    <span className={s.footerFull}>01 / Client Flagship</span>
+                    <span className={s.footerShort}>01 / Flagship</span>
                   </div>
-                  <div className={s.metricItem}>
-                    <span className={s.metricKey}>Type Safety</span>
-                    <span className={s.metricVal}>Strict TypeScript</span>
+                  <div className={s.compareFooterHint}>
+                    <Icon name="drag_indicator" size={13} />
+                    <span className={s.footerFull}>Hover or drag to compare</span>
+                    <span className={s.footerShort}>Hover to compare</span>
                   </div>
-                  <div className={s.metricItem}>
-                    <span className={s.metricKey}>Interaction</span>
-                    <span className={s.metricVal}>Spring Dynamics</span>
+                  <div className={s.compareFooterItem}>
+                    <span className={s.badgeDotLavender} aria-hidden="true" />
+                    <span className={s.footerFull}>02 / Platform Architecture</span>
+                    <span className={s.footerShort}>02 / Platform</span>
                   </div>
                 </div>
               </div>
