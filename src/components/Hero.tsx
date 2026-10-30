@@ -19,8 +19,11 @@ export function Hero() {
   const [mounted, setMounted] = useState(false);
 
   // Retrieve project data from real projects config
-  const elephantGrey = projects.find((p) => p.id === 'elephant-grey') ?? projects[0];
-  const cerco = projects.find((p) => p.id === 'cerco') ?? projects[1] ?? projects[0];
+  const strategicNotes = projects.find((p) => p.id === 'strategic-creative-notes') ?? projects[1] ?? projects[0];
+
+  // Static paths for the comparison images (wireframe left, live site right)
+  const wireframeImage = '/images/projects/scn-wireframe.jpg';
+  const websiteImage = '/images/projects/scn-website.jpg';
 
   // ── Entrance animation trigger ─────────────────────────────
   useEffect(() => {
@@ -218,17 +221,17 @@ export function Hero() {
                   </div>
                   <div className={s.compareUrl}>
                     <Icon name="compare_arrows" size={13} />
-                    <span>elephant-grey ⟷ cerco</span>
+                    <span>wireframe ⟷ live site</span>
                   </div>
                   <span className={s.compareBadge}>Interactive</span>
                 </div>
 
                 {/* Aceternity UI Compare Slider */}
                 <Compare
-                  firstImage={elephantGrey.image}
-                  secondImage={cerco.image}
-                  firstImageAlt={`${elephantGrey.title} — Atelier architecture digital flagship preview`}
-                  secondImageAlt={`${cerco.title} — Contextual service discovery platform interface`}
+                  firstImage={wireframeImage}
+                  secondImage={websiteImage}
+                  firstImageAlt={`${strategicNotes.title} — wireframe design`}
+                  secondImageAlt={`${strategicNotes.title} — live website`}
                   firstImageClassName="object-cover object-top"
                   secondImageClassname="object-cover object-top"
                   className={s.compareComponent}
@@ -236,18 +239,20 @@ export function Hero() {
                   initialSliderPercentage={50}
                   showHandlebar={true}
                   showSparkles={true}
+                  sparklesSide="first"
+                  sparklesColor="#8A63D2"
                   firstImageLabel={
                     <span className={s.floatingBadge}>
-                      <span className={s.badgeDotGreen} aria-hidden="true" />
-                      <span className={s.badgeFull}>01 / Elephant Grey · Flagship</span>
-                      <span className={s.badgeShort}>01 / Elephant Grey</span>
+                      <span className={s.badgeDotLavender} aria-hidden="true" />
+                      <span className={s.badgeFull}>Wireframe · Before</span>
+                      <span className={s.badgeShort}>Wireframe</span>
                     </span>
                   }
                   secondImageLabel={
                     <span className={s.floatingBadge}>
-                      <span className={s.badgeDotLavender} aria-hidden="true" />
-                      <span className={s.badgeFull}>02 / Cerco · Platform UI</span>
-                      <span className={s.badgeShort}>02 / Cerco</span>
+                      <span className={s.badgeDotGreen} aria-hidden="true" />
+                      <span className={s.badgeFull}>Live Site · After</span>
+                      <span className={s.badgeShort}>Live Site</span>
                     </span>
                   }
                 />
@@ -255,9 +260,9 @@ export function Hero() {
                 {/* Subtle Editorial Meta Strip */}
                 <div className={s.compareFooter}>
                   <div className={s.compareFooterItem}>
-                    <span className={s.badgeDotGreen} aria-hidden="true" />
-                    <span className={s.footerFull}>01 / Client Flagship</span>
-                    <span className={s.footerShort}>01 / Flagship</span>
+                    <span className={s.badgeDotLavender} aria-hidden="true" />
+                    <span className={s.footerFull}>Wireframe · Before</span>
+                    <span className={s.footerShort}>Wireframe</span>
                   </div>
                   <div className={s.compareFooterHint}>
                     <Icon name="drag_indicator" size={13} />
@@ -265,9 +270,9 @@ export function Hero() {
                     <span className={s.footerShort}>Hover to compare</span>
                   </div>
                   <div className={s.compareFooterItem}>
-                    <span className={s.badgeDotLavender} aria-hidden="true" />
-                    <span className={s.footerFull}>02 / Platform Architecture</span>
-                    <span className={s.footerShort}>02 / Platform</span>
+                    <span className={s.badgeDotGreen} aria-hidden="true" />
+                    <span className={s.footerFull}>Live Site · After</span>
+                    <span className={s.footerShort}>Live Site</span>
                   </div>
                 </div>
               </div>

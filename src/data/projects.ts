@@ -63,10 +63,10 @@ export const projects: Project[] = [
     category: 'client',
     status: 'live',
     badge: '01 / Client Work — Live',
-    discipline: 'Atelier Architecture',
+    discipline: 'Creative Studio',
     scope: 'Design & Full Frontend Development',
     tagline:
-      'Bespoke digital flagship for an atelier architectural firm, engineered with typographic fluidity, accessible hierarchy, and sub-second paint times on 4G cellular networks.',
+      'Digital flagship for an independent creative studio and media production house, built around story-first editorial design and precise typographic architecture.',
     description:
       'Elephant Grey Collaborative LLP is an independent creative studio and media production house based in India, specialising in grounded, realistic storytelling, episodic series design, narrative architecture, and end-to-end project execution. I designed and developed their website to communicate their identity clearly to collaborators and clients.',
     problem:
@@ -81,98 +81,43 @@ export const projects: Project[] = [
     technologies: ['Vite', 'React', 'Tailwind CSS', 'Responsive Architecture'],
     mockup: '/images/workshop/elephant-grey.jpg',
     mockupAlt:
-      'Refined architectural monograph website in deep charcoal and warm alabaster, showing Brutalist concrete structures in soft morning light with meticulous typographic composition.',
+      'Refined editorial website for Elephant Grey Collaborative in deep charcoal and warm alabaster, with meticulous typographic composition and story-first layout.',
     frameUrl: 'elephant-grey.com',
     frameIcon: 'lock',
     image: '/images/projects/elephant-grey.jpg',
     liveUrl: 'https://elephant-grey.com/',
   },
 
-  /* ── 2. Cerco — service discovery platform ─────────── */
+  /* ── 2. Strategic Creative Notes — personal team project ── */
   {
-    id: 'cerco',
-    title: 'Cerco',
+    id: 'strategic-creative-notes',
+    title: 'Strategic Creative Notes',
     category: 'personal',
-    status: 'in-progress',
-    badge: '02 / Platform',
-    discipline: 'Service Directory',
-    scope: 'Interface Design & Frontend Architecture',
+    status: 'live',
+    badge: '02 / Personal Team Project — Live',
+    discipline: 'Knowledge Management',
+    scope: 'Product Design & Frontend Development',
     tagline:
-      'Contextual service discovery platform connecting local specialists with clients through contextual search, geospatial mapping, and frictionless facet filtering.',
+      'A collaborative notes platform built for creative teams — structured thinking, linked ideas, and a clean editorial interface for strategy work.',
     description:
-      'Cerco is a platform concept designed to help people discover and connect with local service providers — from electricians and plumbers to tutors and event caterers. The goal is to make the process of finding verified, reviewed local services as simple and trustworthy as possible.',
+      'Strategic Creative Notes is a personal team project — a web application designed for creative professionals and strategists who need a focused, distraction-free space to capture, organise, and develop ideas together. The platform emphasises clear information hierarchy and a considered writing environment over feature bloat.',
     problem:
-      'Finding reliable local services in India often relies on informal word-of-mouth or scattered listings across multiple platforms. Cerco explores what a purpose-built, design-first discovery experience could look like.',
-    role: 'This is a collaborative project. My contribution covers the interface design, frontend architecture, search and filtering UI, and responsive development.',
+      'Generic note-taking tools are either too simple for structured creative strategy work or too complex with unnecessary features. Strategic Creative Notes explores what a purpose-built, design-conscious tool for creative teams could look like.',
+    role: 'Personal team project. Contributed to product design, frontend architecture, interface design, and the collaborative editing experience.',
     approach:
-      'The interface prioritises clarity and trust: service cards show relevant metadata upfront, filtering is fast and contextual, and the design system uses clean, readable typography with deliberate whitespace to make browsing feel effortless.',
+      'The interface is intentionally minimal: a clean sidebar for navigation, a focused editor for writing, and linked notes for connecting related ideas. Typography and whitespace carry the visual weight. The design system uses a dark base with restrained accent colours for long writing sessions.',
     outcome:
-      'Currently in active development. The core browsing and filtering interface is functional.',
-    technologies: ['React', 'TypeScript', 'Tailwind', 'UI Tooling'],
-    mockup: '/images/workshop/cerco.jpg',
-    mockupAlt:
-      'Contextual discovery platform interface with structured data grids, geometric search filter facets, and interactive service card directories in navy on off-white.',
-    frameUrl: 'cerco.network/discovery',
-    frameIcon: 'tune',
-    image: '/images/projects/cerco.png',
-  },
-
-  /* ── 3. Assist AI — AI interface concept ───────────── */
-  {
-    id: 'assist-ai',
-    title: 'Assist AI',
-    category: 'personal',
-    status: 'concept',
-    badge: '03 / R&D Lab',
-    discipline: 'Generative Tokens',
-    scope: 'Active Prototype / Research',
-    tagline:
-      'Exploration into prompt-to-layout generative workflows, bridging high-level semantic intent with deterministic, composable design tokens and real-time layout synthesis.',
-    description:
-      'Assist AI is a concept project exploring what it would look like if an AI could generate and refine interface components from natural language prompts. The project investigates the design and UX side of AI-powered tooling — how do you communicate what you want, how do you review and iterate on generated output, and what controls keep the human in the loop?',
-    problem:
-      'AI code generation tools exist but the interface for refining generated UI is often clunky or requires deep technical knowledge. This concept explores a design-first approach to that interaction.',
-    role: 'Sole designer and developer of the concept prototype. Research, UX design, interface prototyping.',
-    approach:
-      'I focused on the interaction model: a split-view editor with real-time preview, a prompt history panel, and simple refinement controls. The concept is implemented as a static prototype with AI functionality documented rather than fully wired.',
-    outcome:
-      'Concept prototype complete. Serves as a demonstration of my interest in AI-powered product experiences and the UX challenges they present. Not yet a launched product.',
+      'Live at strategic-creative-notes.vercel.app. Used by the team for ongoing creative strategy and project documentation.',
     learned:
-      'Thinking critically about AI tools as a UX designer means questioning what "help" actually means, and when the AI is genuinely saving time vs. adding friction.',
-    technologies: ['LLM Prompts', 'Design Tokens', 'Next.js', 'AST Parsing'],
-    mockup: '/images/workshop/assist-ai.jpg',
+      'Building a tool you actually use as a team forces real prioritisation — every unnecessary feature becomes an obvious distraction when you are the primary user.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    mockup: '/images/workshop/strategic-creative-notes.jpg',
     mockupAlt:
-      'Developer tool canvas with generative design node trees, modular wireframe layouts, and token inspectors in off-white and deep midnight blue.',
-    frameUrl: 'assist-lab.internal/canvas',
-    frameIcon: 'psychology',
-    image: '/images/projects/assist-ai.png',
-  },
-
-  /* ── 4. Smart Irrigation System — academic IoT ──────── */
-  {
-    id: 'smart-irrigation',
-    title: 'Smart Irrigation System',
-    category: 'academic',
-    status: 'academic',
-    badge: '04 / Applied CS',
-    discipline: 'IoT Telemetry',
-    scope: 'IoT Logic & Telemetry Dashboard',
-    tagline:
-      'Applied Computer Science academic project parsing soil telemetry to optimize moisture dispersion with low-latency microcontrollers and real-time data streaming.',
-    description:
-      'An academic project exploring embedded systems and IoT concepts. The system uses soil moisture sensors to automate irrigation decisions, reducing water usage by only activating irrigation when soil conditions require it. The project covered hardware integration, sensor data processing, basic decision logic, and documentation.',
-    role: 'Academic project. Contributed to sensor integration, data flow design, and the written report.',
-    approach:
-      'The system uses a microcontroller to read moisture sensor data at regular intervals. When moisture falls below a threshold, the irrigation actuator is triggered. A simple dashboard shows current sensor readings.',
-    outcome:
-      'Submitted as an academic case study. Demonstrates foundational understanding of IoT system design, sensor integration, and hardware-software interaction.',
-    technologies: ['C++', 'Microcontroller', 'Telemetry', 'REST APIs'],
-    mockup: '/images/workshop/smart-irrigation.jpg',
-    mockupAlt:
-      'Real-time telemetry dashboard with environmental sensor data, moisture percentage trend charts, microcontroller packet logs, and hardware device states.',
-    frameUrl: 'telemetry.local:8080/soil',
-    frameIcon: 'sensors',
-    image: '/images/projects/smart-irrigation.png',
+      'Strategic Creative Notes web application interface showcasing the student productivity workspace, beautiful typography, and unified note-taking suite.',
+    frameUrl: 'strategic-creative-notes.vercel.app',
+    frameIcon: 'article',
+    image: '/images/projects/scn-website.jpg',
+    liveUrl: 'https://strategic-creative-notes.vercel.app/',
   },
 ];
 

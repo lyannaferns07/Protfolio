@@ -18,6 +18,9 @@ export interface CompareProps {
   autoplay?: boolean;
   autoplayDuration?: number;
   showSparkles?: boolean;
+  /** Which side the sparkles appear on. "divider" (default) = centred on the line; "first" = left image only; "second" = right image only */
+  sparklesSide?: "divider" | "first" | "second";
+  sparklesColor?: string;
   firstImageLabel?: React.ReactNode;
   secondImageLabel?: React.ReactNode;
 }
@@ -36,6 +39,8 @@ export const Compare = ({
   autoplay = false,
   autoplayDuration = 5000,
   showSparkles = true,
+  sparklesSide = "divider",
+  sparklesColor = "#FFFFFF",
   firstImageLabel,
   secondImageLabel,
 }: CompareProps) => {
@@ -222,6 +227,19 @@ export const Compare = ({
                 loading="eager"
                 decoding="async"
               />
+              {/* Sparkles pinned to the LEFT (first) image */}
+              {showSparkles && sparklesSide === "first" && (
+                <div className="absolute inset-0 z-30 pointer-events-none overflow-hidden">
+                  <MemoizedSparklesCore
+                    background="transparent"
+                    minSize={0.8}
+                    maxSize={2.4}
+                    particleDensity={80}
+                    className="w-full h-full"
+                    particleColor={sparklesColor}
+                  />
+                </div>
+              )}
               {/* Optional first image floating badge */}
               {firstImageLabel && (
                 <div className="absolute top-3 left-3 z-30 pointer-events-none">
@@ -248,6 +266,19 @@ export const Compare = ({
               loading="eager"
               decoding="async"
             />
+            {/* Sparkles pinned to the RIGHT (second) image */}
+            {showSparkles && sparklesSide === "second" && (
+              <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
+                <MemoizedSparklesCore
+                  background="transparent"
+                  minSize={0.8}
+                  maxSize={2.4}
+                  particleDensity={80}
+                  className="w-full h-full"
+                  particleColor={sparklesColor}
+                />
+              </div>
+            )}
             {/* Optional second image floating badge */}
             {secondImageLabel && (
               <div className="absolute top-3 right-3 z-30 pointer-events-none">
@@ -277,8 +308,8 @@ export const Compare = ({
           {/* Glowing gradient wash along the divider */}
           <div className="w-24 h-full absolute top-0 -left-12 bg-gradient-to-r from-transparent via-[#D8C9EE]/25 to-transparent pointer-events-none z-20" />
 
-          {/* Sparkles Particle Field (visible, floating, centered on divider line) */}
-          {showSparkles && (
+          {/* Sparkles Particle Field — centred on divider (default behaviour) */}
+          {showSparkles && sparklesSide === "divider" && (
             <div className="w-16 h-full top-0 -left-8 absolute pointer-events-none z-30 overflow-visible">
               <MemoizedSparklesCore
                 background="transparent"
@@ -286,7 +317,7 @@ export const Compare = ({
                 maxSize={2.4}
                 particleDensity={100}
                 className="w-full h-full"
-                particleColor="#FFFFFF"
+                particleColor={sparklesColor}
               />
             </div>
           )}

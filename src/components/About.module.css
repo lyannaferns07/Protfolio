@@ -70,7 +70,7 @@
 .portraitWrapper {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 320px;
 }
 
 /* Subtle Lavender Mist offset layer behind with thin Muted Lilac border */
@@ -365,7 +365,7 @@
 
   .portraitWrapper {
     order: 2;
-    max-width: 100%;
+    max-width: 280px;
     width: calc(100% - 12px);
     margin-right: 12px;
     margin-bottom: 12px;
@@ -435,7 +435,7 @@
   .portraitWrapper {
     grid-column: 2 / 3;
     order: 2;
-    max-width: 100%;
+    max-width: 280px;
     width: calc(100% - 12px);
     margin-right: 12px;
     margin-bottom: 12px;
