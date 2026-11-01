@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { credentials, capabilityIndex } from '../data/config';
+import { profile, credentials, capabilityIndex } from '../data/config';
+import { DitherShader } from './ui/dither-shader';
 import { Icon } from './Icon';
 import s from './About.module.css';
 
@@ -122,15 +123,15 @@ export function About() {
         {/* ── ROW A: Intro Header (full width) ────────────────── */}
         <header className={s.rowA}>
           <div className={s.headerText} data-reveal-text>
-            <span className={s.eyebrow}>Philosophy &amp; Mindset</span>
+            <span className={s.eyebrow}>About Me</span>
             <h2 id="about-heading" className={s.heading}>
-              Balancing algorithmic rigor with typographic grace.
+              Software Developer & BSc Computer Science Student.
             </h2>
           </div>
 
           <div className={s.headerQuoteWrap} data-reveal-text>
             <blockquote className={s.pullquote}>
-              <p>&ldquo;Honesty in code, poise in typography.&rdquo;</p>
+              <p>&ldquo;Curious by nature. Builder by choice.&rdquo;</p>
             </blockquote>
           </div>
         </header>
@@ -143,15 +144,38 @@ export function About() {
               <div className={s.portraitWrapper} data-reveal-photo>
                 <div className={s.portraitBackdrop} aria-hidden="true" />
                 <figure className={s.portraitFigure}>
-                  <div className={s.portraitImgWrap}>
+                  <div
+                    className={s.portraitImgWrap}
+                    onPointerMove={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      e.currentTarget.style.setProperty('--mask-x', `${e.clientX - rect.left}px`);
+                      e.currentTarget.style.setProperty('--mask-y', `${e.clientY - rect.top}px`);
+                      e.currentTarget.style.setProperty('--mask-active', '1');
+                    }}
+                    onPointerLeave={(e) => {
+                      e.currentTarget.style.setProperty('--mask-active', '0');
+                    }}
+                  >
+                    <div className={s.portraitDither}>
+                      <DitherShader
+                        src="/assets/lyann-portrait.jpg"
+                        gridSize={1}
+                        ditherMode="bayer"
+                        colorMode="grayscale"
+                        threshold={0.35}
+                        objectPosition="center 15%"
+                        alt="Portrait of Lyann Fernandes"
+                        className="w-full h-full"
+                      />
+                    </div>
                     <img
-                      src="/assets/lyann-portrait.png"
+                      src="/assets/lyann-portrait.jpg"
                       alt="Portrait of Lyann Fernandes"
-                      width={843}
-                      height={920}
+                      width={640}
+                      height={960}
                       loading="lazy"
                       decoding="async"
-                      className={s.portraitImg}
+                      className={s.portraitImgClear}
                     />
                   </div>
                   <figcaption className={s.portraitCaption}>
@@ -174,26 +198,17 @@ export function About() {
           <div className={s.rightCol}>
             {/* 1. Narrative Card */}
             <div className={s.narrative} data-reveal-card>
-              <h3 className={s.narrativeTitle}>Engineering from Mumbai for the Web</h3>
-              <p className={s.body}>
-                Currently completing my BSc in Computer Science at the University of Mumbai, I build
-                interfaces that refuse to compromise. My academic grounding in algorithmic efficiency,
-                computational logic, and memory constraints informs how I architect modern web
-                layouts.
-              </p>
-              <p className={s.body}>
-                I believe in zero-bloat web craft, accessible semantic primitives, and honoring the
-                fluid nature of browsers across diverse networks and screen formats.
-              </p>
+              <h3 className={s.narrativeTitle}>Building from Mumbai for the Web</h3>
+              <p className={s.body}>{profile.tagline}</p>
+              <p className={s.body}>{profile.taglinePart2}</p>
             </div>
 
-            {/* 2. Philosophy & Mindset Body Paragraph */}
+            {/* 2. Quick Facts */}
             <div className={s.paragraphBlock} data-reveal-card>
               <p className={s.body}>
-                Every interface is both a visual surface and a mechanical computational artifact. I
-                approach software engineering with an architect&rsquo;s restraint: no superfluous
-                dependencies, clean document object structures, and an obsessive focus on performance
-                under constrained conditions.
+                I work with React, TypeScript, and Tailwind CSS to build responsive, accessible
+                websites. I enjoy the problem-solving side of development just as much as the
+                visual craft.
               </p>
             </div>
 

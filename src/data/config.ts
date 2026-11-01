@@ -14,7 +14,7 @@ export const profile = {
   /** Display name as it appears in the header and footer. */
   name: 'Lyann Fernandes',
   /** Monospace eyebrow pill above the hero headline. */
-  role: 'Independent Creative Developer',
+  role: 'Software Developer',
   /** Location + timezone string shown in the hero eyebrow. */
   locationLine: 'Mumbai, IN [IST / UTC+5:30]',
   /** Hero headline (rendered as one flowing serif block). */
@@ -24,27 +24,30 @@ export const profile = {
   heroLine2: 'digital experiences.',
   /** Supporting copy beneath the hero headline. */
   tagline:
-    "I'm Lyann, a computer science student and creative developer exploring thoughtful web design, frontend engineering, and AI.",
+    "I'm a Software Developer and BSc Computer Science student passionate about building meaningful digital experiences and solving real-world problems through technology.",
+  /** Second tagline paragraph shown in About section. */
+  taglinePart2:
+    "Currently exploring Full-Stack Development, AI, and emerging technologies, I'm driven by curiosity, continuous learning, and turning ideas into functional digital products.",
   /** Build stamp beside the eyebrow pill. */
   buildStamp: 'Portfolio 2026',
   /** Availability pill. */
-  availability: 'Open to select projects & internships',
+  availability: 'Open to internships & freelance projects',
   /** Primary + secondary hero CTA labels. */
-  ctaPrimary: 'Explore Selected Work',
-  ctaSecondary: 'Get in touch',
+  ctaPrimary: 'View Projects',
+  ctaSecondary: 'Contact Me',
   email: 'lyannaferns@gmail.com',
   /** Location string used in About / Contact. */
   location: 'Mumbai, India (IST / UTC+5:30)',
   /** Academic focus. */
-  education: 'BSc Computer Science student',
+  education: 'BSc Computer Science, 2nd year',
 } as const;
 
 /** Four hairline-delimited stats beneath the hero CTAs. */
 export const heroStats: readonly HeroStat[] = [
-  { label: 'Location', value: 'Mumbai, India (19.0760° N)' },
-  { label: 'Focus', value: 'BSc Computer Science' },
-  { label: 'Core Stack', value: 'React, TypeScript, Next.js' },
-  { label: 'Approach', value: 'Creative UI & A11y Rigor' },
+  { label: 'Location', value: 'Mumbai, India' },
+  { label: 'Education', value: 'BSc Computer Science, 2nd year' },
+  { label: 'Tech Stack', value: 'Used 20+ tech stack' },
+  { label: 'Status', value: 'Open to opportunities' },
 ] as const;
 
 export const socials = [
@@ -62,10 +65,10 @@ export const nav = [
 
 /** Credentials table rows in the About section. */
 export const credentials = [
-  { key: 'Education',    value: 'BSc in Computer Science, Mumbai University (Final Year)', emphasis: false },
-  { key: 'Focus Areas',  value: 'Creative Frontend, UI Systems, AI Integrations', emphasis: false },
-  { key: 'Core Standard',value: 'Semantic HTML, 100% Lighthouse, Zero heavy runtimes', emphasis: false },
-  { key: 'Availability', value: 'Open to select projects & internships (2026)', emphasis: true },
+  { key: 'Education',         value: 'BSc Computer Science, 2nd year, Mumbai University', emphasis: false },
+  { key: 'Focus Areas',       value: 'Frontend Development, UI Design, Web Development', emphasis: false },
+  { key: 'Currently Learning',value: 'Full-Stack Development, AI & Machine Learning', emphasis: false },
+  { key: 'Availability',      value: 'Open to internships & freelance projects (2026)', emphasis: true },
 ] as const;
 
 /** Three-column "under the hood" capability index in the About section. */
@@ -73,16 +76,16 @@ export const capabilityIndex = [
   {
     id: '01',
     title: 'Core Languages',
-    items: ['TypeScript', 'JavaScript (ESNext)', 'Python', 'HTML5 / Modern CSS'],
+    items: ['JavaScript', 'TypeScript', 'Python', 'SQL', 'HTML5 & CSS3'],
   },
   {
     id: '02',
     title: 'Frameworks & Tools',
-    items: ['React 18 / 19', 'Next.js (App Router)', 'Tailwind CSS', 'Vite & Bun'],
+    items: ['React.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'Vite', 'GSAP', 'Framer Motion', 'Git & GitHub'],
   },
   {
     id: '03',
-    title: 'Disciplines',
-    items: ['Data Structures & Alg.', 'Responsive Layouts', 'WCAG 2.1 AA Standards', 'REST APIs & Telemetry'],
+    title: 'Backend & AI',
+    items: ['MongoDB', 'Firebase', 'MySQL', 'Supabase', 'REST APIs', 'AI Integrations', 'Full-Stack Development'],
   },
 ] as const;

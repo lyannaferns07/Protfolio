@@ -1,4 +1,4 @@
-import { profile, nav } from '../data/config';
+import { profile } from '../data/config';
 import { Icon } from './Icon';
 import s from './Footer.module.css';
 
@@ -16,15 +16,6 @@ export function Footer() {
             architectural precision.
           </p>
         </div>
-
-        {/* Footer nav */}
-        <nav className={s.nav} aria-label="Footer navigation">
-          {nav.map((item) => (
-            <a key={item.id} href={item.href} className={s.navLink}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
 
         {/* Back to top */}
         <a href="#home" className={s.toTop}>

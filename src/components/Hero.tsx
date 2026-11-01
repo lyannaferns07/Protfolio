@@ -149,10 +149,6 @@ export function Hero() {
             {/* Eyebrow metadata row */}
             <div className={`${s.eyebrowRow} ${s.staggerItem} ${s.delay1}`}>
               <span className={s.rolePill}>{profile.role}</span>
-              <span className={s.statusPill}>
-                <span className={s.statusDot} aria-hidden="true" />
-                {profile.availability}
-              </span>
               <span className={s.locationPill}>
                 <Icon name="location_on" size={13} />
                 {profile.locationLine}
@@ -189,22 +185,13 @@ export function Hero() {
             {/* Refined CTAs */}
             <div className={`${s.ctas} ${s.staggerItem} ${s.delay4}`}>
               <a href="#workshop" className={s.ctaPrimary}>
-                <span>{profile.ctaPrimary}</span>
+                <span>Explore Projects</span>
                 <Icon name="arrow_downward" size={16} className={s.ctaIconDown} />
               </a>
               <a href="#contact" className={s.ctaSecondary}>
-                <span>{profile.ctaSecondary}</span>
+                <span>Let's Connect</span>
                 <Icon name="arrow_outward" size={16} className={s.ctaIconOut} />
               </a>
-            </div>
-
-            {/* Minimalist stack spec row */}
-            <div className={`${s.techPills} ${s.staggerItem} ${s.delay5}`}>
-              <span className={s.techPillLabel}>Core Focus:</span>
-              <span className={s.techPill}>React 19</span>
-              <span className={s.techPill}>TypeScript</span>
-              <span className={s.techPill}>Tailwind CSS</span>
-              <span className={s.techPill}>AI Integration</span>
             </div>
           </div>
 
@@ -244,14 +231,14 @@ export function Hero() {
                   firstImageLabel={
                     <span className={s.floatingBadge}>
                       <span className={s.badgeDotLavender} aria-hidden="true" />
-                      <span className={s.badgeFull}>Wireframe · Before</span>
+                      <span className={s.badgeFull}>Wireframe</span>
                       <span className={s.badgeShort}>Wireframe</span>
                     </span>
                   }
                   secondImageLabel={
                     <span className={s.floatingBadge}>
                       <span className={s.badgeDotGreen} aria-hidden="true" />
-                      <span className={s.badgeFull}>Live Site · After</span>
+                      <span className={s.badgeFull}>Live Site</span>
                       <span className={s.badgeShort}>Live Site</span>
                     </span>
                   }
@@ -261,7 +248,7 @@ export function Hero() {
                 <div className={s.compareFooter}>
                   <div className={s.compareFooterItem}>
                     <span className={s.badgeDotLavender} aria-hidden="true" />
-                    <span className={s.footerFull}>Wireframe · Before</span>
+                    <span className={s.footerFull}>Wireframe</span>
                     <span className={s.footerShort}>Wireframe</span>
                   </div>
                   <div className={s.compareFooterHint}>
@@ -271,7 +258,7 @@ export function Hero() {
                   </div>
                   <div className={s.compareFooterItem}>
                     <span className={s.badgeDotGreen} aria-hidden="true" />
-                    <span className={s.footerFull}>Live Site · After</span>
+                    <span className={s.footerFull}>Live Site</span>
                     <span className={s.footerShort}>Live Site</span>
                   </div>
                 </div>

@@ -93,9 +93,11 @@ const StickyCard_001 = ({
               </h3>
 
               {/* Scope */}
+              {project.scope && (
               <p className="text-[11px] font-mono tracking-wider uppercase text-[#6a5d46]">
                 Scope: {project.scope}
               </p>
+              )}
 
               {/* Blurb */}
               <p className="text-xs md:text-sm text-[#515f78] line-clamp-4 leading-relaxed mt-1">
@@ -259,9 +261,11 @@ const Skiper16 = ({
               <h3 className="font-serif text-2xl text-[#111C32] font-normal">
                 {project.title}
               </h3>
+              {project.scope && (
               <p className="text-[10px] font-mono uppercase text-[#6a5d46] mt-0.5">
                 Scope: {project.scope}
               </p>
+              )}
               <p className="text-xs text-[#515f78] mt-2 leading-relaxed">
                 {project.tagline}
               </p>

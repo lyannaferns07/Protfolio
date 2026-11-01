@@ -21,7 +21,7 @@ export type Project = {
   /** Monospace discipline label on the right of the badge row */
   discipline: string;
   /** Uppercase scope line beneath the title */
-  scope: string;
+  scope?: string;
   /** Card blurb (60–120 chars) */
   tagline: string;
   /** Longer description for the expanded case study modal */
@@ -64,7 +64,6 @@ export const projects: Project[] = [
     status: 'live',
     badge: '01 / Client Work — Live',
     discipline: 'Creative Studio',
-    scope: 'Design & Full Frontend Development',
     tagline:
       'Digital flagship for an independent creative studio and media production house, built around story-first editorial design and precise typographic architecture.',
     description:
@@ -96,16 +95,15 @@ export const projects: Project[] = [
     status: 'live',
     badge: '02 / Personal Team Project — Live',
     discipline: 'Knowledge Management',
-    scope: 'Product Design & Frontend Development',
     tagline:
-      'A collaborative notes platform built for creative teams — structured thinking, linked ideas, and a clean editorial interface for strategy work.',
+      'A collaborative notes management platform for students and creative professionals — structured thinking, linked ideas, and focused writing in one seamless workspace.',
     description:
-      'Strategic Creative Notes is a personal team project — a web application designed for creative professionals and strategists who need a focused, distraction-free space to capture, organise, and develop ideas together. The platform emphasises clear information hierarchy and a considered writing environment over feature bloat.',
+      'A collaborative notes management platform designed for students and creative professionals, bringing structured thinking, linked ideas, and focused writing into one seamless workspace. Features a rich-text editing experience, intuitive folder and category-based organization, and a streamlined dashboard for managing ideas, accessing notes, and staying organized.',
     problem:
-      'Generic note-taking tools are either too simple for structured creative strategy work or too complex with unnecessary features. Strategic Creative Notes explores what a purpose-built, design-conscious tool for creative teams could look like.',
+      'Generic note-taking tools are either too simple for structured creative strategy work or too complex with unnecessary features. Strategic Creative Notes explores what a purpose-built, design-conscious tool for students and creative teams could look like.',
     role: 'Personal team project. Contributed to product design, frontend architecture, interface design, and the collaborative editing experience.',
     approach:
-      'The interface is intentionally minimal: a clean sidebar for navigation, a focused editor for writing, and linked notes for connecting related ideas. Typography and whitespace carry the visual weight. The design system uses a dark base with restrained accent colours for long writing sessions.',
+      'Rich-text editor with formatting capabilities for structured writing. Folder and category-based organization for efficient note management. Centralized dashboard with search and quick access to recent notes. Responsive interface for seamless access across devices. Clean, distraction-free workspace designed for focused thinking and productivity.',
     outcome:
       'Live at strategic-creative-notes.vercel.app. Used by the team for ongoing creative strategy and project documentation.',
     learned:

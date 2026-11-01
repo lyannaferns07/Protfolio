@@ -88,12 +88,6 @@ export function Header() {
           <a href="#home" className={s.logo} aria-label={`${profile.name} — home`}>
             {profile.name}
           </a>
-          {'availability' in profile && profile.availability && (
-            <span className={s.availability}>
-              <span className={s.availabilityDot} aria-hidden="true" />
-              {profile.availability}
-            </span>
-          )}
         </div>
 
         {/* Desktop nav */}
@@ -116,7 +110,7 @@ export function Header() {
         {/* Trailing action */}
         <div className={s.actions}>
           <a href="#contact" className={s.cta}>
-            Get in touch
+            Let's connect
           </a>
           <button
             type="button"
@@ -158,7 +152,7 @@ export function Header() {
           onClick={() => setMenuOpen(false)}
           tabIndex={menuOpen ? 0 : -1}
         >
-          Get in touch
+          Let's connect
           <Icon name="arrow_outward" size={16} />
         </a>
       </div>
