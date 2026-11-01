@@ -22,7 +22,7 @@ export const profile = {
 
 export const socials = [
   // TODO: replace with your own profile URLs.
-  { id: 'instagram', label: 'Instagram', href: 'https://instagram.com/' },
+  { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/lyanna_ferns__07/' },
   { id: 'pinterest', label: 'Pinterest', href: 'https://pinterest.com/' },
   { id: 'x', label: 'X', href: 'https://x.com/' },
 ] as const;

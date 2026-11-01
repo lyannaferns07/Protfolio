@@ -49,10 +49,9 @@ export const heroStats: readonly HeroStat[] = [
 ] as const;
 
 export const socials = [
-  { id: 'github',   label: 'GitHub',   icon: 'code',          href: 'https://github.com/' },
-  { id: 'readcv',   label: 'ReadCV',   icon: 'description',   href: 'https://readcv.com/' },
-  { id: 'linkedin', label: 'LinkedIn', icon: 'hub',           href: 'https://linkedin.com/in/' },
-  { id: 'twitter',  label: 'Twitter / X', icon: 'alternate_email', href: 'https://x.com/' },
+  { id: 'github',    label: 'GitHub',    icon: 'code',         href: 'https://github.com/' },
+  { id: 'linkedin',  label: 'LinkedIn',  icon: 'hub',          href: 'https://linkedin.com/in/' },
+  { id: 'instagram', label: 'Instagram', icon: 'photo_camera', href: 'https://www.instagram.com/lyanna_ferns__07/' },
 ] as const;
 
 export const nav = [

@@ -91,12 +91,6 @@
   justify-content: center;
 }
 
-@media (min-width: 1280px) {
-  .inner {
-    max-width: 1380px;
-  }
-}
-
 /* ── Asymmetric Two-Column Desktop Grid ────────────────────── */
 .mainLayout {
   display: grid;
@@ -107,8 +101,8 @@
 
 @media (min-width: 1024px) {
   .mainLayout {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.28fr);
-    gap: clamp(32px, 3.5vw, 56px);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+    gap: clamp(40px, 4.5vw, 72px);
     padding-bottom: 24px;
   }
 }
@@ -386,7 +380,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
+  padding: 8px 14px;
   background: #f7f6f2;
   border-bottom: 1px solid var(--border-light);
   gap: 8px;
@@ -492,7 +486,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
+  padding: 8px 14px;
   background: #fbfaf8;
   border-top: 1px solid var(--border-light);
   gap: 12px;
