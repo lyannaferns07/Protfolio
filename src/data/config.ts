@@ -32,8 +32,7 @@ export const profile = {
   /** Primary + secondary hero CTA labels. */
   ctaPrimary: 'Explore Selected Work',
   ctaSecondary: 'Get in touch',
-  /** TODO: replace with your real address. */
-  email: 'lyannfernandes@example.com',
+  email: 'lyannaferns@gmail.com',
   /** Location string used in About / Contact. */
   location: 'Mumbai, India (IST / UTC+5:30)',
   /** Academic focus. */
