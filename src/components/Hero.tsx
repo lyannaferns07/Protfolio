@@ -185,7 +185,7 @@ export function Hero() {
             {/* Refined CTAs */}
             <div className={`${s.ctas} ${s.staggerItem} ${s.delay4}`}>
               <a href="#workshop" className={s.ctaPrimary}>
-                <span>Explore Projects</span>
+                <span>Explore Selected Work</span>
                 <Icon name="arrow_downward" size={16} className={s.ctaIconDown} />
               </a>
               <a href="#contact" className={s.ctaSecondary}>

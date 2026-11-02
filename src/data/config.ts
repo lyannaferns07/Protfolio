@@ -33,8 +33,8 @@ export const profile = {
   /** Availability pill. */
   availability: 'Open to internships & freelance projects',
   /** Primary + secondary hero CTA labels. */
-  ctaPrimary: 'View Projects',
-  ctaSecondary: 'Contact Me',
+  ctaPrimary: 'Explore Selected Work',
+  ctaSecondary: "Let's Connect",
   email: 'lyannaferns@gmail.com',
   /** Location string used in About / Contact. */
   location: 'Mumbai, India (IST / UTC+5:30)',
