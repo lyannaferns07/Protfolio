@@ -240,3 +240,70 @@
   }
   .metaRow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ── Mobile (< 640px) ────────────────────────────────────── */
+@media (max-width: 639px) {
+  .root {
+    padding: var(--space-lg) 0;
+  }
+
+  .inner {
+    padding-inline: var(--margin);
+    overflow-x: hidden;
+  }
+
+  .heading {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .card {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+
+  /* Email must never cause horizontal scroll at 320px */
+  .email {
+    font-size: clamp(1rem, 5vw, 1.35rem);
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .emailRow {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Copy button — min 44px tap target */
+  .copyBtn {
+    min-height: 44px;
+    padding: 10px 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Social channel buttons — min 44px tap target */
+  .channel {
+    min-height: 44px;
+    padding: 10px 16px;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .channelList {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .metaRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}

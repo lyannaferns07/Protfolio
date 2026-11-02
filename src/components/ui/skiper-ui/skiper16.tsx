@@ -210,7 +210,8 @@ const Skiper16 = ({
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      // Use < 1024 so tablets also get the clean vertical card stack
+      setIsMobile(window.innerWidth < 1024);
     };
     checkMobile();
     window.addEventListener("resize", checkMobile);
@@ -238,17 +239,17 @@ const Skiper16 = ({
     }
   });
 
-  // Mobile layout: clean vertical card stack without complex sticky overflow
+  // Mobile/Tablet layout (< 1024px): clean vertical card stack without complex sticky overflow
   if (isMobile) {
     return (
       <div className="w-full flex flex-col gap-6 px-4 py-6">
         {projectList.map((project, i) => (
           <div
             key={project.id ?? `p_${i}`}
-            className="w-full rounded-2xl bg-white border border-[#D8C9EE]/60 p-5 shadow-sm flex flex-col gap-4"
+            className="w-full rounded-2xl bg-white border border-[#D8C9EE]/60 shadow-sm flex flex-col gap-4 overflow-hidden"
           >
             {/* Header info */}
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center justify-between gap-2 px-5 pt-5">
               <span className="px-2.5 py-0.5 rounded text-[10px] font-mono uppercase bg-[#F0EAF8] border border-[#D8C9EE] text-[#5e4d8a] font-semibold">
                 {project.badge}
               </span>
@@ -257,60 +258,55 @@ const Skiper16 = ({
               </span>
             </div>
 
-            <div>
+            <div className="px-5">
               <h3 className="font-serif text-2xl text-[#111C32] font-normal">
                 {project.title}
               </h3>
-              {project.scope && (
-              <p className="text-[10px] font-mono uppercase text-[#6a5d46] mt-0.5">
-                Scope: {project.scope}
-              </p>
-              )}
               <p className="text-xs text-[#515f78] mt-2 leading-relaxed">
                 {project.tagline}
               </p>
             </div>
 
             {/* Mockup Preview */}
-            <div className="w-full rounded-lg border border-[#dcddd9] overflow-hidden bg-[#FAF9F6]">
-              <div className="h-6 px-2.5 bg-[#f4f4f0] border-b border-[#dcddd9] flex items-center justify-between">
+            <div className="w-full border-y border-[#dcddd9] overflow-hidden bg-[#FAF9F6]">
+              <div className="h-7 px-3 bg-[#f4f4f0] border-b border-[#dcddd9] flex items-center justify-between">
                 <span className="flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#dbdad6]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#dbdad6]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#dbdad6]" />
+                  <span className="w-2 h-2 rounded-full bg-[#dbdad6]" />
+                  <span className="w-2 h-2 rounded-full bg-[#dbdad6]" />
+                  <span className="w-2 h-2 rounded-full bg-[#dbdad6]" />
                 </span>
-                <span className="text-[9px] font-mono text-[#7c8aa4]">
+                <span className="text-[10px] font-mono text-[#7c8aa4]">
                   {project.frameUrl}
                 </span>
               </div>
               <img
                 src={project.mockup}
                 alt={project.mockupAlt}
-                className="w-full h-auto object-cover aspect-[16/10] block"
+                className="w-full h-auto object-cover aspect-[16/10] block max-w-full"
                 loading="lazy"
               />
             </div>
 
             {/* Tech tags */}
-            <ul className="flex flex-wrap gap-1.5">
+            <ul className="flex flex-wrap gap-1.5 px-5">
               {project.technologies.map((tech) => (
                 <li
                   key={tech}
-                  className="px-2 py-0.5 rounded text-[9px] font-mono bg-[#efeeea] text-[#111C32] border border-[#dcddd9]"
+                  className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#efeeea] text-[#111C32] border border-[#dcddd9]"
                 >
                   {tech}
                 </li>
               ))}
             </ul>
 
-            {/* Link */}
-            <div className="pt-1">
+            {/* Link — min 44px tap target */}
+            <div className="px-5 pb-5">
               {project.liveUrl ? (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#111C32]"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#111C32] min-h-[44px]"
                 >
                   <span className="border-b border-[#dcddd9]">Live Website</span>
                   <Icon name="arrow_outward" size={14} />
@@ -319,7 +315,7 @@ const Skiper16 = ({
                 <button
                   type="button"
                   onClick={() => onSelectProject?.(project)}
-                  className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#111C32] cursor-pointer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#111C32] cursor-pointer min-h-[44px]"
                 >
                   <span className="border-b border-[#dcddd9]">Read Case Study</span>
                   <Icon name="arrow_forward" size={14} />

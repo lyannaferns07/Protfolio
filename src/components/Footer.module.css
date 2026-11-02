@@ -97,3 +97,27 @@
     text-align: left;
   }
 }
+
+/* ── Mobile (< 640px) ─────────────────────────────────── */
+@media (max-width: 639px) {
+  .inner {
+    padding: var(--space-lg) var(--margin);
+    gap: var(--space-lg);
+  }
+
+  .logo {
+    font-size: var(--fs-headline-md-mobile);
+  }
+
+  .colophon {
+    font-size: var(--fs-body-sm);
+    max-width: 36ch;
+  }
+
+  /* Back to top — min 44px tap target */
+  .toTop {
+    min-height: 44px;
+    align-items: center;
+    padding: 8px 0;
+  }
+}

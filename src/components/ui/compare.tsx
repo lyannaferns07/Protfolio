@@ -326,7 +326,7 @@ export const Compare = ({
           {showHandlebar && (
             <div
               className={cn(
-                "h-9 w-9 rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 absolute z-50 flex items-center justify-center pointer-events-auto",
+                "h-11 w-11 rounded-full top-1/2 -translate-y-1/2 -translate-x-1/2 absolute z-50 flex items-center justify-center pointer-events-auto",
                 "bg-white border-[1.5px] border-[#D8C9EE] text-[#111C32]",
                 "shadow-[0_4px_16px_rgba(17,28,50,0.16),0_0_0_1px_rgba(216,201,238,0.4)]",
                 "transition-transform duration-150 select-none",

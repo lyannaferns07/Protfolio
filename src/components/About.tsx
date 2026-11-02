@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { profile, credentials, capabilityIndex } from '../data/config';
 import { DitherShader } from './ui/dither-shader';
-import { Icon } from './Icon';
 import s from './About.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -125,7 +124,7 @@ export function About() {
           <div className={s.headerText} data-reveal-text>
             <span className={s.eyebrow}>About Me</span>
             <h2 id="about-heading" className={s.heading}>
-              Software Developer & BSc Computer Science Student.
+              Full Stack Developer & BSc Computer Science Student.
             </h2>
           </div>
 
@@ -179,18 +178,11 @@ export function About() {
                     />
                   </div>
                   <figcaption className={s.portraitCaption}>
-                    FIG. 01 / LYANN FERNANDES — MUMBAI, IN
+                    LYANN FERNANDES — MUMBAI, IN
                   </figcaption>
                 </figure>
               </div>
 
-              <div className={s.badgeCard} data-reveal-card>
-                <Icon name="verified" size={18} className={s.badgeCardIcon} />
-                <div>
-                  <p className={s.badgeCardTitle}>100% Lighthouse Performance</p>
-                  <p className={s.badgeCardSub}>Standard bench on all custom builds</p>
-                </div>
-              </div>
             </div>
           </div>
 

@@ -17,6 +17,7 @@ export function Hero() {
   const visualRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
 
   // Retrieve project data from real projects config
   const strategicNotes = projects.find((p) => p.id === 'strategic-creative-notes') ?? projects[1] ?? projects[0];
@@ -33,6 +34,15 @@ export function Hero() {
     }, 60);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // ── Detect touch device for compare hint ───────────────────
+  useEffect(() => {
+    const check = () => setIsTouch(window.matchMedia('(pointer: coarse)').matches);
+    check();
+    const mq = window.matchMedia('(pointer: coarse)');
+    mq.addEventListener('change', check);
+    return () => mq.removeEventListener('change', check);
   }, []);
 
   // ── Pointer-Responsive Parallax + Grid Glow (shared RAF) ──────
@@ -253,8 +263,8 @@ export function Hero() {
                   </div>
                   <div className={s.compareFooterHint}>
                     <Icon name="drag_indicator" size={13} />
-                    <span className={s.footerFull}>Hover or drag to compare</span>
-                    <span className={s.footerShort}>Hover to compare</span>
+                    <span className={s.footerFull}>{isTouch ? 'Drag to compare' : 'Hover or drag to compare'}</span>
+                    <span className={s.footerShort}>{isTouch ? 'Drag' : 'Hover'} to compare</span>
                   </div>
                   <div className={s.compareFooterItem}>
                     <span className={s.badgeDotGreen} aria-hidden="true" />

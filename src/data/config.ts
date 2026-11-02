@@ -14,7 +14,7 @@ export const profile = {
   /** Display name as it appears in the header and footer. */
   name: 'Lyann Fernandes',
   /** Monospace eyebrow pill above the hero headline. */
-  role: 'Software Developer',
+  role: 'Full Stack Developer',
   /** Location + timezone string shown in the hero eyebrow. */
   locationLine: 'Mumbai, IN [IST / UTC+5:30]',
   /** Hero headline (rendered as one flowing serif block). */
@@ -24,7 +24,7 @@ export const profile = {
   heroLine2: 'digital experiences.',
   /** Supporting copy beneath the hero headline. */
   tagline:
-    "I'm a Software Developer and BSc Computer Science student passionate about building meaningful digital experiences and solving real-world problems through technology.",
+    "I'm a Full Stack Developer and BSc Computer Science student passionate about building meaningful digital experiences and solving real-world problems through technology.",
   /** Second tagline paragraph shown in About section. */
   taglinePart2:
     "Currently exploring Full-Stack Development, AI, and emerging technologies, I'm driven by curiosity, continuous learning, and turning ideas into functional digital products.",

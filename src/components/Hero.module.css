@@ -561,6 +561,18 @@
   }
 }
 
+/* On very small phones keep stats rail padding tight */
+@media (max-width: 399px) {
+  .statsInner {
+    padding-inline: 16px;
+    gap: 12px 16px;
+  }
+
+  .statCell {
+    padding-left: 10px;
+  }
+}
+
 .statCell {
   display: flex;
   flex-direction: column;
@@ -605,15 +617,17 @@
   }
 
   .headline {
-    font-size: 34px;
+    font-size: clamp(2rem, 9vw, 2.75rem);
     line-height: 1.12;
     margin-bottom: 18px;
+    max-width: 100%;
   }
 
   .tagline {
     font-size: 15px;
     line-height: 1.5;
     margin-bottom: 24px;
+    max-width: 100%;
   }
 
   .ctas {
@@ -627,6 +641,8 @@
   .ctaSecondary {
     width: 100%;
     justify-content: center;
+    /* Minimum 44px tap target */
+    min-height: 44px;
   }
 
   .columnVisual {
@@ -674,6 +690,62 @@
   }
 }
 
+/* ── Tablet (640px – 1023px) ──────────────────────────────── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .inner {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .headline {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 18ch;
+  }
+
+  .tagline {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
+  /* Side-by-side CTAs on tablet */
+  .ctas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    /* Minimum 44px tap target */
+    min-height: 44px;
+  }
+
+  .columnVisual {
+    max-width: 100%;
+  }
+}
+
+/* ── Touch-device interaction guard ───────────────────────── */
+@media (max-width: 1023px) {
+  .root {
+    /* Prevent horizontal scroll bleed */
+    overflow-x: hidden;
+  }
+
+  .mainLayout {
+    /* Ensure single-column on tablet/mobile */
+    grid-template-columns: 1fr;
+  }
+
+  .inner {
+    /* Prevent any child from causing horizontal overflow */
+    overflow-x: clip;
+  }
+}
+
 /* ── Prefers-Reduced-Motion ────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .staggerItem,
@@ -701,3 +773,4 @@
     display: none !important;
   }
 }
+
