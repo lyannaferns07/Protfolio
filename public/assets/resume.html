@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lyann Fernandes — Resume</title>
+<style>
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10pt;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Page wrapper (A4: 210mm x 297mm) ── */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    max-height: 297mm;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  /* ══════════════════════════════════════
+     LEFT SIDEBAR
+  ══════════════════════════════════════ */
+  .sidebar {
+    background: #f7f7f7;
+    height: 100%;
+    padding: 42px 24px 38px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    border-right: 1px solid #e8e8e8;
+  }
+
+  /* Photo */
+  .photo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+  .photo-wrap img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 10%;
+    border: 3.5px solid #d1c4e9;
+    box-shadow: 0 4px 14px rgba(124, 92, 191, 0.18);
+  }
+
+  /* Section headers */
+  .sidebar-section-title {
+    background: #2d2d2d;
+    color: #fff;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    margin-bottom: 14px;
+    border-radius: 2px;
+  }
+
+  /* Contact items */
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 9.5pt;
+    color: #333;
+    margin-bottom: 12px;
+    word-break: break-all;
+    line-height: 1.45;
+  }
+  .contact-icon {
+    font-size: 11.5pt;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .contact-item a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* Education */
+  .edu-entry {
+    margin-bottom: 16px;
+  }
+  .edu-degree {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .edu-school {
+    font-size: 9.5pt;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+  .edu-year {
+    font-size: 9pt;
+    color: #777;
+  }
+
+  /* Sidebar Skills List */
+  .sidebar-skills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9.5px;
+  }
+  .sidebar-skills li {
+    font-size: 10pt;
+    color: #2d2d2d;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    line-height: 1.35;
+  }
+  .sidebar-skills li::before {
+    content: '•';
+    color: #7c5cbf;
+    font-size: 13pt;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════════
+     MAIN CONTENT
+  ══════════════════════════════════════ */
+  .main {
+    height: 100%;
+    padding: 42px 32px 38px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Name / title block */
+  .name-block {
+    margin-bottom: 2px;
+  }
+  .name-block h1 {
+    font-size: 32pt;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #111;
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+  .name-block h1 span {
+    display: block;
+  }
+  .name-block .job-title {
+    font-size: 12.5pt;
+    color: #7c5cbf;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-top: 6px;
+  }
+
+  /* Section header (main) */
+  .section-title {
+    background: #2d2d2d;
+    color: #fff;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    margin-bottom: 16px;
+    border-radius: 2px;
+  }
+
+  /* Experience entries */
+  .exp-entry {
+    margin-bottom: 22px;
+  }
+  .exp-entry:last-child {
+    margin-bottom: 0;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
+  .exp-role {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #111;
+  }
+  .exp-date {
+    font-size: 9.5pt;
+    color: #777;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .exp-company {
+    font-size: 10pt;
+    color: #7c5cbf;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .exp-desc {
+    font-size: 10pt;
+    color: #3e3e3e;
+    line-height: 1.6;
+  }
+  .exp-desc li {
+    list-style: none;
+    padding-left: 15px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .exp-desc li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #7c5cbf;
+    font-size: 11pt;
+  }
+
+  /* Tech tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 9px;
+  }
+  .tag {
+    font-size: 8.5pt;
+    padding: 3px 9px;
+    border: 1px solid #d1c4e9;
+    border-radius: 10px;
+    color: #5e4d8a;
+    background: #f3eeff;
+    font-weight: 500;
+  }
+
+  /* ── Print media ── */
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: 100%; height: 297mm; max-height: 297mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════════ -->
+  <aside class="sidebar">
+
+    <!-- Photo -->
+    <div class="photo-wrap">
+      <img src="lyann-portrait.jpg" alt="Lyann Fernandes" />
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="sidebar-section-title">Contact</div>
+      <div class="contact-item">
+        <span class="contact-icon">✉</span>
+        <a href="mailto:lyannaferns@gmail.com">lyannaferns@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🔗</span>
+        <a href="https://github.com/lyannaferns07" target="_blank">github.com/lyannaferns07</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">💼</span>
+        <a href="https://www.linkedin.com/in/lyann-fernandes-42b9a8374/" target="_blank">linkedin.com/in/lyann-fernandes</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <span>Mumbai, India</span>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div>
+      <div class="sidebar-section-title">Education</div>
+      <div class="edu-entry">
+        <div class="edu-degree">BSc Computer Science</div>
+        <div class="edu-school">Mumbai University</div>
+        <div class="edu-year">2nd Year · 2026 – Present</div>
+      </div>
+      <div class="edu-entry">
+        <div class="edu-degree">HSC — Science</div>
+        <div class="edu-school">Mumbai Board</div>
+        <div class="edu-year">Completed 2025</div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div>
+      <div class="sidebar-section-title">Skills</div>
+      <ul class="sidebar-skills">
+        <li>JavaScript &amp; TypeScript</li>
+        <li>React.js &amp; Vite</li>
+        <li>Node.js &amp; Express.js</li>
+        <li>Tailwind CSS</li>
+        <li>HTML5 &amp; CSS3</li>
+        <li>Python</li>
+        <li>SQL &amp; MySQL</li>
+        <li>MongoDB &amp; Firebase</li>
+        <li>Supabase &amp; REST APIs</li>
+        <li>Git &amp; GitHub</li>
+        <li>Full-Stack Development</li>
+        <li>UI/UX Design</li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- ══ MAIN ══════════════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- Name block -->
+    <div class="name-block">
+      <h1><span>LYANN</span><span>FERNANDES</span></h1>
+      <div class="job-title">Full Stack Developer &amp; BSc Computer Science Student</div>
+    </div>
+
+    <!-- Summary -->
+    <div>
+      <div class="section-title">Profile</div>
+      <p style="font-size:10pt;color:#333;line-height:1.65;">
+        Full Stack Developer and BSc Computer Science student passionate about building meaningful digital
+        experiences and solving real-world problems through technology. Hands-on experience developing
+        websites — including client-based and personal projects — with a focus on creating intuitive,
+        responsive, and visually engaging user experiences. Currently exploring Full-Stack Development,
+        AI, and emerging technologies, driven by curiosity and continuous learning.
+      </p>
+    </div>
+
+    <!-- Projects / Work Experience -->
+    <div>
+      <div class="section-title">Projects &amp; Work</div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <span class="exp-role">Elephant Grey Studio — Website</span>
+          <span class="exp-date">Client Project · 2026</span>
+        </div>
+        <div class="exp-company">Client Work — Live in Production</div>
+        <ul class="exp-desc">
+          <li>Designed and developed the full client-facing website for Elephant Grey, a creative studio.</li>
+          <li>Implemented an intuitive UI/UX with modern design hierarchy, structured layouts, and smooth interactions.</li>
+          <li>Fully responsive, SEO-optimised, deployed and live at elephant-grey.com.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Vite</span><span class="tag">React</span>
+          <span class="tag">Tailwind CSS</span><span class="tag">Responsive Architecture</span>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <span class="exp-role">Strategic Creative Notes</span>
+          <span class="exp-date">Personal Project · 2026</span>
+        </div>
+        <div class="exp-company">Notes Management Platform</div>
+        <ul class="exp-desc">
+          <li>Collaborative notes platform for students and creative professionals.</li>
+          <li>Rich-text editor, folder/category organisation, centralised dashboard with search.</li>
+          <li>Responsive interface designed for focused thinking and productivity.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">React.js</span><span class="tag">Node.js</span>
+          <span class="tag">Firebase</span><span class="tag">Tailwind CSS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hackathons & Achievements -->
+    <div>
+      <div class="section-title">Hackathons &amp; Achievements</div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <span class="exp-role">Zypher Tech Competition</span>
+          <span class="exp-date">Participant · 2026</span>
+        </div>
+        <ul class="exp-desc">
+          <li>Competed in Zypher, a college-level tech competition, presenting a technical project.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <span class="exp-role">Hack It Out 2.0</span>
+          <span class="exp-date">Participant · 2026</span>
+        </div>
+        <ul class="exp-desc">
+          <li>Participated in Hack It Out 2.0 hackathon, collaborating in a team to build a working product within a time-constrained environment.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
+

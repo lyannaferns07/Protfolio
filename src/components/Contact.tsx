@@ -75,7 +75,7 @@ export function Contact() {
 
           {/* Social channels */}
           <div className={s.channels}>
-            <p className={s.channelsLabel}>Verified Channels</p>
+            <p className={s.channelsLabel}>Profiles</p>
             <div className={s.channelList}>
               {socials.map((social) => (
                 <a
@@ -90,6 +90,19 @@ export function Contact() {
                   <Icon name="arrow_outward" size={12} className={s.channelArrow} />
                 </a>
               ))}
+              {/* Resume download */}
+              <a
+                href="/assets/Lyann-Fernandes-Resume.pdf"
+                download="Lyann-Fernandes-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={s.channel}
+                aria-label="Download Lyann Fernandes Resume"
+              >
+                <Icon name="download" size={16} />
+                Resume
+                <Icon name="arrow_downward" size={12} className={s.channelArrow} />
+              </a>
             </div>
           </div>
         </div>

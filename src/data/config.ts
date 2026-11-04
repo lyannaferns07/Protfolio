@@ -51,8 +51,8 @@ export const heroStats: readonly HeroStat[] = [
 ] as const;
 
 export const socials = [
-  { id: 'github',    label: 'GitHub',    icon: 'code',         href: 'https://github.com/' },
-  { id: 'linkedin',  label: 'LinkedIn',  icon: 'hub',          href: 'https://linkedin.com/in/' },
+  { id: 'github',    label: 'GitHub',    icon: 'code',         href: 'https://github.com/lyannaferns07' },
+  { id: 'linkedin',  label: 'LinkedIn',  icon: 'hub',          href: 'https://www.linkedin.com/in/lyann-fernandes-42b9a8374/' },
   { id: 'instagram', label: 'Instagram', icon: 'photo_camera', href: 'https://www.instagram.com/lyanna_ferns__07/' },
 ] as const;
 
